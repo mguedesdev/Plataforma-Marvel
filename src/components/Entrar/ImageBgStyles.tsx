@@ -17,7 +17,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     height: 100%;
     ${({animate}) => animate && css`
       animation: moveBackground 3s forwards;
-      animation-delay: 1.5s;
+      animation-delay: 0.8s;
     `}
   }
 
@@ -33,15 +33,14 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     z-index: 0;
 
     ${({animate}) => animate && css`
-      animation: moveGradient 2s forwards;
-      animation-delay: 1.5s;
+      animation: moveGradient 3s forwards;
+      animation-delay: 0.8s;
     `}
   }
 
   ${({animate}) => animate && css`
     animation: fadeInBackGround 2s forwards;
-    animation-delay: 1.5s;
-
+    animation-delay: 0.8s;
   `}
   
 `;
