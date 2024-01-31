@@ -2,13 +2,12 @@ import { LogoContainer } from './LogoStyles';
 
 interface LogoProps {
   fontSize?: string;
+  animate?: boolean;
 }
 
-function Logo({ fontSize = '60px' }: LogoProps) {
+function Logo({ fontSize = '60px', animate }: LogoProps) {
   return (
-    <div>
-      <LogoContainer fontSize={fontSize}>MARVEL</LogoContainer>
-    </div>
+    <LogoContainer fontSize={fontSize} animate={animate}>MARVEL</LogoContainer>
   )
 }
 

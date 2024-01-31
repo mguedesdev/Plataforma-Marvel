@@ -18,27 +18,28 @@
 @font-face {
   font-family: Axiforma;
   src: url('./Axiforma-Bold.otf') format('opentype');
-  font-weight: bold;
+  font-weight: 700;
   font-style: normal;
 }
 
 @font-face {
   font-family: Axiforma;
   src: url('./Axiforma-Medium.otf') format('opentype');
-  font-weight: medium;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: Axiforma;
-  src: url('./Axiforma-Thin.otf') format('opentype');
-  font-weight: thin;
+  font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
   font-family: Axiforma;
   src: url('./Axiforma-Light.otf') format('opentype');
-  font-weight: lighter;
+  font-weight: 300;
   font-style: normal;
 }
+
+@font-face {
+  font-family: Axiforma;
+  src: url('./Axiforma-Thin.otf') format('opentype');
+  font-weight: 100;
+  font-style: normal;
+}
+
