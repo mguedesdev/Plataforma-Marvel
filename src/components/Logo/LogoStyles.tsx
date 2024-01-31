@@ -1,11 +1,26 @@
 import styled from 'styled-components';
 
-export const LogoContainer = styled.div`
-  background-color: red;
-  padding: 12px 10px 0px 10px;
-  font-size: 60px;
-  color: white;
-  font-family: 'Marvel', sans-serif;
+interface LogoContainerProps {
+  fontSize?: string;
+}
 
-  line-height: 0.8;
+export const LogoContainer = styled.span<LogoContainerProps>`
+  background-color: red;
+  color: white;
+  font-size: ${props => props.fontSize || '60px'};
+  font-family: 'Marvel', sans-serif;
+  font-weight: 100;
+
+  padding: 10px;
+  line-height: 1;
+  letter-spacing: 2px;
+
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background-color: white;
+    color: red;
+  }
 `; 

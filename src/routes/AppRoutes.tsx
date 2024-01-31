@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import Personagens from '../pages/Personagens';
 import Filmes from '../pages/Filmes';
 import HQs from '../pages/HQs';
-import Entrar from '../pages/Entrar';
+import Entrar from '../pages/Entrar/Entrar';
 
 const AppRoutes = () => {
   return (

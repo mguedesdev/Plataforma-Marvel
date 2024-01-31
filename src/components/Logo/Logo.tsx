@@ -1,8 +1,14 @@
-import { LogoContainer } from './LogoStyles'
+import { LogoContainer } from './LogoStyles';
 
-function Logo() {
+interface LogoProps {
+  fontSize?: string;
+}
+
+function Logo({ fontSize = '60px' }: LogoProps) {
   return (
-    <LogoContainer>MARVEL</LogoContainer>
+    <div>
+      <LogoContainer fontSize={fontSize}>MARVEL</LogoContainer>
+    </div>
   )
 }
 

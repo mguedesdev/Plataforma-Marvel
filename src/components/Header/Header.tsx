@@ -5,7 +5,7 @@ import Logo from '../Logo/Logo';
 const Header = () => {
   return (
     <HeaderContainer>
-      <Logo/>
+      <Logo fontSize='60px'/>
       <Nav>
         <NavLink to="/personagens">Personagens</NavLink>
         <NavLink to="/filmes">Filmes</NavLink>

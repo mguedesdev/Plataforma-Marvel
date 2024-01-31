@@ -3,6 +3,9 @@
   src: url('./Marvel-Regular.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
+  ascent-override: 70%;
+  descent-override: 0%;
+
 }
 
 @font-face {
