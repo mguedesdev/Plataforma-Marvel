@@ -16,6 +16,16 @@
   }
 }
 
+@keyframes moveGradient {
+  0%, 30% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+
 @keyframes moveLogo {
   0%, 20% {
     top: 50%;

@@ -23,6 +23,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
 
   &:after {
     content: '';
+    opacity: 0;
     position: absolute;
     left: 0;
     top: 0;
@@ -31,6 +32,10 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     background: linear-gradient(to right, rgba(0, 0, 0, 1), transparent);
     z-index: 0;
 
+    ${({animate}) => animate && css`
+      animation: moveGradient 2s forwards;
+      animation-delay: 1.5s;
+    `}
   }
 
   ${({animate}) => animate && css`
