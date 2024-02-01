@@ -129,7 +129,7 @@ export const SaveLogin = styled.div`
   }
 `;
 
-export const Cadastrese = styled.div`
+export const Register = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;

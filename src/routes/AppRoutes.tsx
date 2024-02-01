@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 
 // Importar os componentes das páginas
-import Personagens from '../pages/Personagens';
-import Filmes from '../pages/Filmes';
-import HQs from '../pages/HQs';
-import Entrar from '../pages/Entrar/Entrar';
+import Personagens from '../pages/CharactersPage';
+import Filmes from '../pages/MoviesPage';
+import HQs from '../pages/ComicsPage';
+import Entrar from '../pages/Entrar/LoginPage';
 
 const AppRoutes = () => {
   return (

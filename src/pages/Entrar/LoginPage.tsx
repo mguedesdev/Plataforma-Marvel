@@ -1,6 +1,6 @@
-import { MainContainer, MainContent, Form, BtnLogin, SaveLogin, Cadastrese} from './EntrarStyles';
+import { MainContainer, MainContent, Form, BtnLogin, SaveLogin, Register} from './LoginPageStyles';
 import Logo from '../../components/Logo/Logo';
-import ImageBg from '../../components/Entrar/ImageBg';
+import ImageBg from '../../components/LoginPage/ImageBg';
 import '../../styles/animations.css';
 
 
@@ -30,10 +30,10 @@ function Entrar() {
 
           <BtnLogin to="/personagens">Entrar</BtnLogin>
 
-          <Cadastrese>
+          <Register>
             <p>Ainda não tem o login?</p>
             <a href="#">Cadastre-se</a>
-          </Cadastrese>
+          </Register>
           
         </Form>
       </MainContent>
