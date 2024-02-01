@@ -1,28 +1,60 @@
-import styled from "styled-components";
+import styled, { keyframes, css } from "styled-components";
 
-export const CardContainer = styled.main`
+interface CardContainerProps {
+  isEntering: boolean;
+  isExiting: boolean;
+}
+
+
+const fadeIn = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
+
+const fadeOut = keyframes`
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+`;
+
+export const CardContainer = styled.main<CardContainerProps>`
   display: flex;
-  flex-direction: column;
-  justify-content: end;
+  position: relative;
 
   height: 550px;
   width: 350px;
   border-radius: 30px;
-  background-color: aliceblue;
-  font-family: "Axiforma", sans-serif;
   overflow: hidden;
-  position: relative;
-
+  
+  
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
     position: absolute;
+    
   }
+
+  ${({ isEntering, isExiting }) => 
+      css`
+        animation: 
+          ${isExiting ? fadeOut : 'none'} .5s ease-in-out both,
+          ${isEntering ? fadeIn : 'none'} .5s ease-in-out both;
+      `
+    }
+
 `;
 
 export const CardContent = styled.div`
+  position: absolute;
+  bottom: 0;
   font-family: "Axiforma", sans-serif;
   padding: 20px 30px;
   display: flex;
@@ -35,13 +67,13 @@ export const CardContent = styled.div`
   border-radius:  30px;
 
   h1{
-    
     font-size: 24px;
     text-align: center;
+    
   }
 
   p {
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 100;
     text-align: start;
     height: 70%;

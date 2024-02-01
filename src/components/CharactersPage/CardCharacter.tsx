@@ -1,18 +1,23 @@
 import { CardContainer, CardContent } from "./CardCharacterStyles"
 
 interface CardCharacterProps {
-  title: string;
-  description: string;
-  image: string;
+  character : {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+  }
+  isEntering?: boolean;
+  isExiting?: boolean;
 }
 
-function CardCharacter({title, description, image}: CardCharacterProps) {
+function CardCharacter({character, isEntering, isExiting}: CardCharacterProps) {
   return (
-    <CardContainer>
-      <img src={image} alt="" />
+    <CardContainer isEntering={isEntering || false} isExiting={isExiting || false} >
+      <img src={character.image} alt={character.title} />
       <CardContent>
-        <h1>{title}</h1>
-        <p>{description}</p>
+        <h1>{character.title}</h1>
+        <p>{character.description}</p>
         <button>ver detalhes</button>
       </CardContent>
     </CardContainer>

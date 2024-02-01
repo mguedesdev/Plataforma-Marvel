@@ -12,7 +12,7 @@ export const MainContainer = styled.main`
   
 `;
 
-export const CardContainer = styled.div`
+export const CardsContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
