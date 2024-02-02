@@ -10,6 +10,11 @@ import { useState } from "react";
 function Personagens() {
   const [start, setStart] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [selectedCardId, setSelectedCardId] = useState(0);
+
+  const handleSelectCard = (id: number) => {
+    setSelectedCardId(id);
+  }
 
   const handleNext = () => {
     setIsTransitioning(true);
@@ -32,16 +37,20 @@ function Personagens() {
       </ButtonNext>
 
       <CardsContainer>
-        {[0, 1, 2].map(i => {
+        {[0, 1, 2].map((i, index) => {
           const character = charactersData[(start + i) % charactersData.length];
           return (
-            <CardCharacter
-              isExiting={isTransitioning} 
-              isEntering={!isTransitioning} 
-              key={character.id + Math.random()}
-              character={character}
-              >
-            </CardCharacter>
+            <div style={{position: 'relative', width: '100%', height: '100%'}}>
+              <CardCharacter
+                isExiting={isTransitioning} 
+                isEntering={!isTransitioning} 
+                key={character.id}
+                character={character}
+                index={index}
+                selectedCardId={selectedCardId}
+                setSelectedCard={handleSelectCard}
+              />
+            </div>
           );
         })}
       </CardsContainer>

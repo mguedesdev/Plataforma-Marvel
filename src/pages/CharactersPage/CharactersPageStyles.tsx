@@ -13,11 +13,13 @@ export const MainContainer = styled.main`
 `;
 
 export const CardsContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
+  grid-template-rows: 550px; /* Altura fixa das linhas */
+  gap: 100px; /* Espaçamento entre as células */
   justify-content: center;
   align-items: center;
   margin-top: 80px;
-  gap: 100px;
 `;
 
 interface ButtonNextProps {
