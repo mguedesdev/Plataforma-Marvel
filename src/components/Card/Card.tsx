@@ -1,36 +1,27 @@
-import { CardContainer, CardContent, ModalContainer, BtnDetails, CardImage } from "./CardCharacterStyles"
+import { CardContainer, CardContent, ModalContainer, BtnDetails, CardImage } from "./CardStyles"
 import { useState } from "react";
-import CardDetails from "./CardDetails";
+import CardDetails from "../CardDetails/CardDetails";
+import { CardItem } from "../../types/cardItem";
 
-interface CardCharacterProps {
-  character : {
-    id: number;
-    title: string;
-    description: string;
-    image: string;
-    appearances: string[];
-    fanRating: number;
-  }
-
+interface CardItemProps {
+  item: CardItem;
   isEntering: boolean;
   isExiting: boolean;
-
   setSelectedCard: (id: number) => void;
   selectedCardId: number;
   index: number;
-
 }
 
-function CardCharacter({ character, isEntering, isExiting, setSelectedCard, selectedCardId, index }: CardCharacterProps) {
+function Card({ item, isEntering, isExiting, setSelectedCard, selectedCardId, index }: CardItemProps) {
 
   const [detailsOpen, setDetailsOpen] = useState(false);
 
   const handleDetails = () => {
     setDetailsOpen(!detailsOpen);
-    setSelectedCard(character.id);
+    setSelectedCard(item.id);
   }
 
-  const isCardSelected = selectedCardId === character.id;
+  const isCardSelected = selectedCardId === item.id;
 
   return (
     <>
@@ -42,18 +33,18 @@ function CardCharacter({ character, isEntering, isExiting, setSelectedCard, sele
         index={index}
       >
 
-        <CardImage src={character.image} alt={character.title} />
+        <CardImage src={item.image} alt={item.title} />
           
         <CardDetails
-          character={character}
+          item={item}
           detailsOpen={detailsOpen}
           handleDetails={handleDetails}
           index={index}
         />
         
         {!detailsOpen && <CardContent>
-          <h1>{character.title}</h1>
-          <p>{character.description}</p>
+          <h1>{item.title}</h1>
+          <p>{item.description}</p>
           <BtnDetails onClick={handleDetails}>ver detalhes</BtnDetails>
         </CardContent>}
         
@@ -64,4 +55,4 @@ function CardCharacter({ character, isEntering, isExiting, setSelectedCard, sele
   )
 }
 
-export default CardCharacter
+export default Card

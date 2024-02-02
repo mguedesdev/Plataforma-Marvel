@@ -1,4 +1,4 @@
-import { LogoContainer } from './LogoStyles';
+import { LogoContainer, LinkLogo } from './LogoStyles';
 
 interface LogoProps {
   fontSize?: string;
@@ -7,7 +7,9 @@ interface LogoProps {
 
 function Logo({ fontSize = '60px', animate }: LogoProps) {
   return (
-    <LogoContainer fontSize={fontSize} animate={animate}>MARVEL</LogoContainer>
+    <LinkLogo to="/">
+      <LogoContainer fontSize={fontSize} animate={animate}> MARVEL </LogoContainer>
+    </LinkLogo>
   )
 }
 

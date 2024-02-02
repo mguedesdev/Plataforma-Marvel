@@ -4,7 +4,6 @@ import Header from "./components/Header/Header";
 import './assets/fonts/fonts.css';
 
 function App() {
-
   return (
     <Router>
       <AppContent />
@@ -14,12 +13,11 @@ function App() {
 
 const AppContent = () => {
   const location = useLocation();
-
   return (
-    <div>
+    <main>
       {location.pathname !== '/' && <Header />}
       <AppRoutes />
-    </div>
+    </main>
   );
 };
 

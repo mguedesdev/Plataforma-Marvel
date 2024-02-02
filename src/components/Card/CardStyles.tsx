@@ -67,6 +67,15 @@ export const CardContent = styled.div`
     overflow: auto;
   }
 
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #FFF;
+    border-radius: 10px;
+  }
+
 `;
 
 export const BtnDetails = styled.button`

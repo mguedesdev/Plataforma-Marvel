@@ -2,8 +2,8 @@ import { Routes, Route } from 'react-router-dom';
 
 // Importar os componentes das páginas
 import CharactersPage from '../pages/CharactersPage/CharactersPage';
-import MoviesPage from '../pages/MoviesPage';
-import ComicsPage from '../pages/ComicsPage';
+import MoviesPage from '../pages/MoviesPage/MoviesPage';
+import ComicsPage from '../pages/ComicsPage/ComicsPage';
 import LoginPage from '../pages/LoginPage/LoginPage';
 
 const AppRoutes = () => {

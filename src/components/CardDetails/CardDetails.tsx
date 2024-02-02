@@ -1,31 +1,28 @@
 import star from '../../assets/star.svg';
 import iconClose from '../../assets/icon-close.png';
 import { CardDetailsContainer, CardDetailsContent, BtnClose } from './CardDetailsStyles';
+import { CardItem } from '../../types/cardItem';
 
-interface CardDetailsContentProps {
-  character: {
-    title: string;
-    appearances: string[];
-    fanRating: number;
-  }
+interface CardDetailsProps {
+  item: CardItem;
   detailsOpen: boolean;
   handleDetails: () => void;
   index: number;
 }
 
-function CardDetails({ character, detailsOpen, handleDetails, index}: CardDetailsContentProps) {
+function CardDetails({ item, detailsOpen, handleDetails, index}: CardDetailsProps) {
   return (
     <>
       {detailsOpen && <CardDetailsContainer>   
         <CardDetailsContent
           index={index}
         >
-          <h1>{character.title}</h1>
+          <h1>{item.title}</h1>
 
           <div>
             <h2>Aparições</h2>
             <ul>
-              {character.appearances.map((appearance, index) => {
+              {item.appearances?.map((appearance, index) => {
                 return <li key={index}>{appearance}</li>
               })}
             </ul>
@@ -37,7 +34,7 @@ function CardDetails({ character, detailsOpen, handleDetails, index}: CardDetail
               <img
                 key={i}
                 src={star}
-                style={{ filter: i < character.fanRating ? 'grayscale(0%)' : 'grayscale(100%)' }}
+                style={{ filter: i < (item.fanRating ?? 0) ? 'grayscale(0%)' : 'grayscale(100%)' }}
               />
             ))}
           </div>
