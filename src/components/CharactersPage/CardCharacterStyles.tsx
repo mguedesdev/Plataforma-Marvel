@@ -35,7 +35,7 @@ export const CardContainer = styled.div<CardContainerProps>`
     display: flex;
 
     z-index: 1000;
-    width: 800px;
+    width: 750px;
     justify-content: ${index !== 0 ? 'flex-end' : 'flex-start'};
     transform: ${index !== 0 ? 'translateX(calc(-100% + 350px))' : '0'};
   `}

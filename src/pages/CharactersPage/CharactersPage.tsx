@@ -37,11 +37,9 @@ function CharactersPage() {
       </ButtonNext>
 
       <CardsContainer>
-        
         {[0, 1, 2].map((i, index) => {
           const character = charactersData[(start + i) % charactersData.length];
           return (
-
             <div style={{position: 'relative', width: '100%', height: '100%'}}>
               <CardCharacter
                 isExiting={isTransitioning} 
@@ -53,10 +51,8 @@ function CharactersPage() {
                 setSelectedCard={handleSelectCard}
               />
             </div>
-
           );
         })}
-
       </CardsContainer>
 
       <ButtonNext onClick={handleNext} position="right" show={true}>
