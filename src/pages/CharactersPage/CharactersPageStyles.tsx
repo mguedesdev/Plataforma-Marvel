@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.main`
+interface ButtonNextProps {
+  position: string;
+  show: boolean;
+}
 
+export const MainContainer = styled.main`
   display: flex;
   flex-direction: center;
   justify-content: center;
@@ -9,23 +13,17 @@ export const MainContainer = styled.main`
   height: calc(100vh - 120px);
   font-family: "Axiforma", sans-serif;
   z-index: -1;
-  
 `;
 
 export const CardsContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 colunas */
-  grid-template-rows: 550px; /* Altura fixa das linhas */
-  gap: 100px; /* Espaçamento entre as células */
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: 550px; 
+  gap: 100px; 
   justify-content: center;
   align-items: center;
   margin-top: 80px;
 `;
-
-interface ButtonNextProps {
-  position: string;
-  show: boolean;
-}
 
 export const ButtonNext = styled.button<ButtonNextProps>`
   position: absolute;
@@ -43,12 +41,11 @@ export const ButtonNext = styled.button<ButtonNextProps>`
   ${({ position }) => position === 'left' && `
       left: 0;
       margin-left: 100px;
-    `}
+  `}
 
   ${({ show }) => !show && `
     display: none;
   `}
-
 
   img{
     width: 50px;

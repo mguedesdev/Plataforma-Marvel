@@ -1,8 +1,8 @@
 
-function Filmes() {
+function MoviesPage() {
   return (
     <div>Filmes</div>
   )
 }
 
-export default Filmes
+export default MoviesPage

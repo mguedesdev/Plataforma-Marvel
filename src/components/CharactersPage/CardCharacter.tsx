@@ -1,8 +1,6 @@
-import { CardContainer, CardContent, ModalContainer, BtnDetails, CardDetailsContainer, CardImage, CardDetailsContent } from "./CardCharacterStyles"
+import { CardContainer, CardContent, ModalContainer, BtnDetails, CardImage } from "./CardCharacterStyles"
 import { useState } from "react";
-import iconClose from "../../assets/icon-close.png";
-import star from '../../assets/star.svg';
-
+import CardDetails from "./CardDetails";
 
 interface CardCharacterProps {
   character : {
@@ -13,11 +11,14 @@ interface CardCharacterProps {
     appearances: string[];
     fanRating: number;
   }
-  index: number;
-  isEntering?: boolean;
-  isExiting?: boolean;
+
+  isEntering: boolean;
+  isExiting: boolean;
+
   setSelectedCard: (id: number) => void;
   selectedCardId: number;
+  index: number;
+
 }
 
 function CardCharacter({ character, isEntering, isExiting, setSelectedCard, selectedCardId, index }: CardCharacterProps) {
@@ -40,37 +41,21 @@ function CardCharacter({ character, isEntering, isExiting, setSelectedCard, sele
         detailsOpen={detailsOpen}
         index={index}
       >
-        
+
         <CardImage src={character.image} alt={character.title} />
+          
+        <CardDetails
+          character={character}
+          detailsOpen={detailsOpen}
+          handleDetails={handleDetails}
+          index={index}
+        />
         
-          {detailsOpen && <CardDetailsContainer>   
-            <CardDetailsContent
-            index={index}>
-              <h1>{character.title}</h1>
-              <div>
-                <h2>Aparições</h2>
-                {character.appearances.map((appearance, index) => {
-                  return <p key={index}>{appearance}</p>
-                })}
-              </div>
-              <div>
-                <h3>Avaliações dos Fãs</h3>
-                {Array.from({ length: 5 }, (_, i) => (
-                  <img key={i} src={star} style={{ filter: i < character.fanRating ? 'grayscale(0%)' : 'grayscale(100%)' }}/>
-                ))}
-              </div>
-              
-            </CardDetailsContent>
-            <button onClick={handleDetails}>
-              <img src={iconClose} alt="" />
-            </button>
-          </CardDetailsContainer>
-          }
-          {!detailsOpen && <CardContent>
-            <h1>{character.title}</h1>
-            <p>{character.description}</p>
-            <BtnDetails onClick={handleDetails}>ver detalhes</BtnDetails>
-          </CardContent>}
+        {!detailsOpen && <CardContent>
+          <h1>{character.title}</h1>
+          <p>{character.description}</p>
+          <BtnDetails onClick={handleDetails}>ver detalhes</BtnDetails>
+        </CardContent>}
         
       </CardContainer>
       

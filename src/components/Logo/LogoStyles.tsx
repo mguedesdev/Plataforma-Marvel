@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import '../../styles/animations.css';
+import { moveLogo } from "../../styles/animations";
 
 interface LogoContainerProps {
   fontSize?: string;
@@ -7,13 +7,12 @@ interface LogoContainerProps {
 }
 
 export const LogoContainer = styled.span<LogoContainerProps>`
+  z-index: 1000;
   background-color: red;
   color: white;
-  font-size: ${props => props.fontSize || '60px'};
+  font-size: ${(props) => props.fontSize || '60px'};
   font-family: 'Marvel', sans-serif;
   font-weight: 100;
-
-  
   
   padding: 0px 15px;
   line-height: 1;
@@ -33,7 +32,7 @@ export const LogoContainer = styled.span<LogoContainerProps>`
     left: 50%;
     transform: translate(-50%, -50%);
     
-    animation: moveLogo 3s forwards;
+    animation: ${moveLogo} 3s forwards;
   `}
 
 `; 

@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import '../styles/animations.css';
+import { moveBackground, fadeIn, moveGradient } from '../styles/animations';
 
 interface ImageContainerProps {
   animate: boolean;
@@ -18,7 +18,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     width: 100%;
     height: 100%;
     ${({animate}) => animate && css`
-      animation: moveBackground 3s forwards;
+      animation: ${moveBackground} 3s forwards;
       animation-delay: 0.8s;
     `}
   }
@@ -34,7 +34,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     z-index: 0;
 
     ${({animate}) => animate && css`
-      animation: moveGradient 3s forwards;
+      animation: ${moveGradient} 3s forwards;
       animation-delay: 0.8s;
     `}
   }
@@ -43,7 +43,7 @@ export const ImageContainer = styled.div<ImageContainerProps>`
     height: 100vh;
     z-index: 1;
     opacity: 0;
-    animation: fadeInBackGround 2s forwards;
+    animation: ${fadeIn} 2s forwards;
     animation-delay: 0.8s;
   `}
   

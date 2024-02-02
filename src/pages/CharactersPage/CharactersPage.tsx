@@ -7,7 +7,7 @@ import charactersData from "../../data/charactersData";
 
 import { useState } from "react";
 
-function Personagens() {
+function CharactersPage() {
   const [start, setStart] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [selectedCardId, setSelectedCardId] = useState(0);
@@ -37,9 +37,11 @@ function Personagens() {
       </ButtonNext>
 
       <CardsContainer>
+        
         {[0, 1, 2].map((i, index) => {
           const character = charactersData[(start + i) % charactersData.length];
           return (
+
             <div style={{position: 'relative', width: '100%', height: '100%'}}>
               <CardCharacter
                 isExiting={isTransitioning} 
@@ -51,8 +53,10 @@ function Personagens() {
                 setSelectedCard={handleSelectCard}
               />
             </div>
+
           );
         })}
+
       </CardsContainer>
 
       <ButtonNext onClick={handleNext} position="right" show={true}>
@@ -63,4 +67,4 @@ function Personagens() {
   )
 }
 
-export default Personagens
+export default CharactersPage

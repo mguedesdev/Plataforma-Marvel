@@ -1,10 +1,6 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-
-interface formProps {
-  animate: boolean;
-}
-
+import { fadeIn } from '../../styles/animations';
 
 export const MainContainer = styled.main`
   background-color: #000;
@@ -37,8 +33,7 @@ export const MainContent = styled.div`
   }
 `;
 
-
-export const Form = styled.form<formProps>`
+export const Form = styled.form`
   opacity: 0;
   display: flex;
   flex-direction: column;
@@ -66,11 +61,9 @@ export const Form = styled.form<formProps>`
     }
   }
 
-  ${({ animate }) => animate && css`
-    animation: fadeInForm 3s forwards;
-    animation-delay: 2s;
-  `}
-
+  animation: ${fadeIn} 3s forwards;
+  animation-delay: 2s;
+  
 `;
 
 export const BtnLogin = styled(Link)`

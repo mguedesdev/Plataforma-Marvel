@@ -1,17 +1,15 @@
 import { MainContainer, MainContent, Form, BtnLogin, SaveLogin, Register} from './LoginPageStyles';
 import Logo from '../../components/Logo/Logo';
 import ImageBg from '../../components/ImageBg';
-import '../../styles/animations.css';
 
-
-function Entrar() {
+function LoginPage() {
   return (
     <MainContainer>
       <ImageBg animate={true} />
       <MainContent>
         <Logo fontSize='100px' animate={true}/>
 
-        <Form animate={true}>
+        <Form>
         <div style={{marginTop: '180px'}}>
           <h1>Bem-vindo(a) de volta!</h1>
           <h3>Acesse sua conta:</h3>
@@ -41,4 +39,4 @@ function Entrar() {
   )
 }
 
-export default Entrar
+export default LoginPage

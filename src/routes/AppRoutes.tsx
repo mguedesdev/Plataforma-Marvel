@@ -1,18 +1,18 @@
 import { Routes, Route } from 'react-router-dom';
 
 // Importar os componentes das páginas
-import Personagens from '../pages/CharactersPage/CharactersPage';
-import Filmes from '../pages/MoviesPage';
-import HQs from '../pages/ComicsPage';
-import Entrar from '../pages/LoginPage/LoginPage';
+import CharactersPage from '../pages/CharactersPage/CharactersPage';
+import MoviesPage from '../pages/MoviesPage';
+import ComicsPage from '../pages/ComicsPage';
+import LoginPage from '../pages/LoginPage/LoginPage';
 
 const AppRoutes = () => {
   return (
     <Routes>
-      <Route path="/" element={<Entrar />} />
-      <Route path="/personagens" element={<Personagens />} />
-      <Route path="/filmes" element={<Filmes />} />
-      <Route path="/hqs" element={<HQs />} />
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/personagens" element={<CharactersPage />} />
+      <Route path="/filmes" element={<MoviesPage />} />
+      <Route path="/hqs" element={<ComicsPage />} />
     </Routes>
   );
 };
