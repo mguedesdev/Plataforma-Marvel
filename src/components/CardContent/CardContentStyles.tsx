@@ -22,16 +22,31 @@ export const Available = styled.div`
   }
 `;
 
-export const ImageIconContainer = styled.div`
-  margin-top: 10px;
-  background-color: #fff; 
-  width: 50px;
-  height: 50px;
-  border-radius: 20%;
+interface AvailableProps {
+  needBg: boolean;
+}
 
+export const ImageIconContainer = styled.div<AvailableProps>`
+  margin-top: 10px;
   img {
-    width: 100%;
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
   }
+
+  ${({ needBg }) => needBg && `
+    margin-top: 10px;
+    background-color: #fff; 
+    width: 50px;
+    height: 50px;
+    border-radius: 20%;
+    
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+  `}
 
 `;
 

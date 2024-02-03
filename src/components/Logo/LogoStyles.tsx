@@ -9,6 +9,7 @@ interface LogoContainerProps {
 
 export const LinkLogo = styled(Link)`
   text-decoration: none;
+
 `;
 
 export const LogoContainer = styled.span<LogoContainerProps>`
@@ -23,7 +24,7 @@ export const LogoContainer = styled.span<LogoContainerProps>`
   line-height: 1;
   letter-spacing: 2px;
 
-  cursor: default;
+  cursor: pointer;
   transition: all 0.3s ease;
 
   &:hover {

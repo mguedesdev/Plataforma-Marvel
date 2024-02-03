@@ -9,4 +9,6 @@ export interface CardItem {
   criticRating?: number;
   releaseDate?: string;
   chronologicalOrder?: number;
+
+  available?: string[];
 }

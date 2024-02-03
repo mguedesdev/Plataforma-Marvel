@@ -7,12 +7,13 @@ export const CustomSelectContainer = styled.div`
   color: #ff0000;
   cursor: pointer;
   border-radius: 10px;
+  width: 160px;
 `;
 
 export const CustomSelectValue = styled.div`
   background-color: black;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   width: 100%;
   padding: 10px;

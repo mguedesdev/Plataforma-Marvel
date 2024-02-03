@@ -13,15 +13,30 @@ function CardContent({item}: MovieContentStylesProps) {
       {item.criticRating && (
         <Content>
           <p>{item.description}</p>
-          <Available>
-            <h3>Disponível em streaming:</h3>
-            <ImageIconContainer>
-              <img src={logoDisney} alt="" />
-            </ImageIconContainer>
-          </Available>
-        </Content>
-      )}
-    </>
+                <Available>
+                  {!item.available && (
+                    <>
+                      <h3>Disponível em streaming:</h3>
+                      <ImageIconContainer needBg={true}>
+                        <img src={logoDisney} alt="" />
+                      </ImageIconContainer>
+                    </>
+                  )}
+
+                  {item.available && (
+                    <>
+                      <h3>Disponível para compra::</h3>
+                      <ImageIconContainer needBg={false}>
+                      {item.available.map((icon) => (
+                        <img src={icon} alt="" />
+                      ))}
+                      </ImageIconContainer>
+                    </>
+                  )}
+                </Available>
+              </Content>
+            )}
+          </>
   )
 }
 
