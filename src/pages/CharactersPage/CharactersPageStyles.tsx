@@ -7,7 +7,6 @@ interface ButtonNextProps {
 
 export const MainContainer = styled.main`
   display: flex;
-  flex-direction: center;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 120px);
@@ -55,4 +54,10 @@ export const ButtonNext = styled.button<ButtonNextProps>`
   &:hover{
     transform: scale(1.2);
   }
+`;
+
+export const CardContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
 `;

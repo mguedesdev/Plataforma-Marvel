@@ -1,9 +1,9 @@
 export interface CardItem {
-  id: number;
-  title: string;
-  description: string;
+  id?: number;
+  title?: string;
+  description?: string;
 
-  image: string;
+  image?: string;
   appearances?: string[];
   fanRating?: number;
   criticRating?: number;

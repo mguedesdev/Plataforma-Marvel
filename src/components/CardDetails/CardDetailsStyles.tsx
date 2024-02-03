@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface CardDetailsProps {
   index: number;
+  isMovie: boolean;
 }
 
 export const CardDetailsContainer = styled.div`
@@ -9,19 +10,16 @@ export const CardDetailsContainer = styled.div`
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, red, rgba(78, 0, 0, 1));
-
 `;
 
 export const CardDetailsContent = styled.div<CardDetailsProps>`
-  position: relative;
   display: flex;
   justify-content: center;
-  gap: 60px;
-  align-items: start;
+  gap: ${({ isMovie }) => isMovie ? '30px' : '60px'};
   flex-direction: column;
   width: calc(100% - 350px);
   height: 100%;
-  padding: 0px 40px;
+  padding: 40px;
   position: absolute;
   right: ${({ index }) => index === 0 ? '0' : 'auto'};
 
@@ -55,6 +53,7 @@ export const CardDetailsContent = styled.div<CardDetailsProps>`
     margin-right: 5px;
   }
 `;
+
 
 export const BtnClose = styled.img`
   z-index: 10;

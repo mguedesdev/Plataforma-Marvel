@@ -1,4 +1,4 @@
-import { MainContainer, CardsContainer, ButtonNext } from "./CharactersPageStyles";
+import { MainContainer, CardsContainer, ButtonNext, CardContainer } from "./CharactersPageStyles";
 import ImageBg from "../../components/ImageBg";
 import CardCharacter from "../../components/Card/Card";
 import RightArrow from '../../assets/right-arrow.svg';
@@ -40,7 +40,7 @@ function CharactersPage() {
         {[0, 1, 2].map((i, index) => {
           const character = charactersData[(start + i) % charactersData.length];
           return (
-            <div style={{position: 'relative', width: '100%', height: '100%'}}>
+            <CardContainer >
               <CardCharacter
                 isExiting={isTransitioning} 
                 isEntering={!isTransitioning} 
@@ -50,7 +50,7 @@ function CharactersPage() {
                 selectedCardId={selectedCardId}
                 setSelectedCard={handleSelectCard}
               />
-            </div>
+            </CardContainer>
           );
         })}
       </CardsContainer>

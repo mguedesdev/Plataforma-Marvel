@@ -7,7 +7,7 @@ interface ButtonNextProps {
 
 export const MainContainer = styled.main`
   display: flex;
-  flex-direction: center;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   height: calc(100vh - 120px);
@@ -47,6 +47,12 @@ export const ButtonNext = styled.button<ButtonNextProps>`
   }
 `;
 
+export const FilterContainer = styled.div`
+  position: relative;
+  width: 100%;
+  z-index: 10;
+`;
+
 export const CardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
@@ -55,4 +61,10 @@ export const CardsContainer = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 80px;
+`;
+
+export const CardContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 100%;
 `;
