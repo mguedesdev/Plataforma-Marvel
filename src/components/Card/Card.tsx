@@ -5,14 +5,13 @@ import { CardItem } from "../../types/cardItem";
 
 interface CardItemProps {
   item: CardItem;
-  isEntering: boolean;
-  isExiting: boolean;
+  animate: boolean;
   setSelectedCard: (id: number) => void;
   selectedCardId: number;
   index: number;
 }
 
-function Card({ item, isEntering, isExiting, setSelectedCard, selectedCardId, index }: CardItemProps) {
+function Card({ item, animate, setSelectedCard, selectedCardId, index }: CardItemProps) {
 
   const [detailsOpen, setDetailsOpen] = useState(false);
 
@@ -26,8 +25,7 @@ function Card({ item, isEntering, isExiting, setSelectedCard, selectedCardId, in
   return (
     <>
       <CardContainer
-        isEntering={isEntering || false}
-        isExiting={isExiting || false}
+        animate={animate}
         isCardSelected={isCardSelected}
         detailsOpen={detailsOpen}
         index={index}
@@ -50,7 +48,9 @@ function Card({ item, isEntering, isExiting, setSelectedCard, selectedCardId, in
         
       </CardContainer>
       
-      {detailsOpen && <ModalContainer detailsOpen={detailsOpen} />}
+      {detailsOpen &&
+        <ModalContainer detailsOpen={detailsOpen}
+      />}
     </>
   )
 }

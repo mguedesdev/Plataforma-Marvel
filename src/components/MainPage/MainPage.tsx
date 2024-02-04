@@ -33,8 +33,7 @@ function MainPage( { data, start } : cardItem) {
         return (
           <CardContainer>
             <Card
-              isExiting={false} 
-              isEntering={true} 
+              animate={true} 
               key={item.id}
               item={item}
               index={index}

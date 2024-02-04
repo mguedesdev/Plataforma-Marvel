@@ -16,6 +16,14 @@ export const ButtonCard = styled.button<ButtonNextProps>`
   ${({ position }) => position === 'right' && `
     right: 0;
     margin-right: 100px;
+    
+    img {
+      transform: rotate(180deg);
+    }
+
+    &:hover img{
+      transform: rotate(180deg);
+    }
   `}
 
   ${({ position }) => position === 'left' && `

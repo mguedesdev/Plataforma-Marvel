@@ -1,10 +1,14 @@
 import styled from "styled-components";
 
+interface CustomSelectContainerProps {
+  isOpen: boolean;
+}
+
 export const MainContainer = styled.div`
   font-family: "Axiforma", sans-serif;
   position: relative;
   width: 100%;
-  z-index: 10;
+  z-index: 2;
 `;
 
 export const CustomSelectContainer = styled.div`
@@ -17,7 +21,7 @@ export const CustomSelectContainer = styled.div`
   width: 160px;
 `;
 
-export const CustomSelectValue = styled.div`
+export const CustomSelectValue = styled.div<CustomSelectContainerProps>`
   background-color: black;
   display: flex;
   justify-content: space-between;
@@ -26,6 +30,14 @@ export const CustomSelectValue = styled.div`
   padding: 10px;
   border-radius: 10px;
   gap: 10px;
+
+  
+
+  img {
+    transition: all 0.3s ease-in-out;
+    transform: ${({ isOpen }) => (isOpen ? "rotate(180deg)" : "rotate(0deg)")};
+  }
+
 `;
 
 export const CustomSelectOptions = styled.div`

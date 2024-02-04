@@ -6,6 +6,7 @@ interface CardDetailsProps {
 }
 
 export const CardDetailsContainer = styled.div`
+  font-family: "Axiforma", sans-serif;
   position: relative;
   width: 100%;
   height: 100%;
@@ -25,7 +26,6 @@ export const CardDetailsContent = styled.div<CardDetailsProps>`
 
   h1 {
     font-size: 30px;
-    text-align: center;
   }
 
   h2{

@@ -2,8 +2,7 @@ import styled, { css } from "styled-components";
 import { fadeIn, fadeOut } from "../../styles/animations";
 
 interface CardContainerProps {
-  isEntering: boolean;
-  isExiting: boolean;
+  animate: boolean;
   isCardSelected: boolean;
   detailsOpen: boolean;
   index: number;
@@ -22,12 +21,10 @@ export const CardContainer = styled.div<CardContainerProps>`
   width: 350px;
   border-radius: 30px;
   overflow: hidden;
-  
 
-  ${({ isEntering, isExiting }) => css`
+  ${({ animate }) => css`
     animation: 
-      ${isExiting ? fadeOut : 'none'} .5s ease-in-out both,
-      ${isEntering ? fadeIn : 'none'} .5s ease-in-out both;
+      ${animate ? fadeIn : 'none'} .5s ease-in-out both;
   `}
 
   ${({ isCardSelected, detailsOpen, index }) => isCardSelected && detailsOpen && css`

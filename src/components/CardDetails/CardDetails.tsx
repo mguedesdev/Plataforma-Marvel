@@ -50,7 +50,7 @@ function CardDetails({ item, detailsOpen, handleDetails, index}: CardDetailsProp
         
         <BtnClose
           src={iconClose}
-          alt="Close Details Button"
+          alt="CloseButton"
           onClick={handleDetails}
         />
 

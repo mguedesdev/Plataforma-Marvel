@@ -1,7 +1,6 @@
 import MainPage from "../../components/MainPage/MainPage";
 import ImageBg from "../../components/ImageBg";
-import RightArrow from '../../assets/right-arrow.svg';
-import LeftArrow from '../../assets/left-arrow.svg';
+import arrow from '../../assets/arrow.svg';
 import ButtonsCard from "../../components/ButtonsCard/ButtonsCard";
 import { MainContainer } from "../../styles/ContainerPageStyles";
 
@@ -27,14 +26,14 @@ function CharactersPage() {
 
       <ButtonsCard
         nextPreviousCard={handleNext}
-        start={true} Arrow={RightArrow}
+        start={true} Arrow={arrow}
         position='right'
       />
 
       <ButtonsCard
         nextPreviousCard={handlePrevious}
         start={start > 0}
-        Arrow={LeftArrow}
+        Arrow={arrow}
         position='left'
       />
     </MainContainer>
