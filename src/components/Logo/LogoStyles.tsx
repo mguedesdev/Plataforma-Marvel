@@ -9,10 +9,11 @@ interface LogoContainerProps {
 
 export const LinkLogo = styled(Link)`
   text-decoration: none;
-
 `;
 
-export const LogoContainer = styled.span<LogoContainerProps>`
+export const LogoContainer = styled.span.withConfig({
+  shouldForwardProp: (prop) => prop !== 'animate',
+  })<LogoContainerProps>`
   z-index: 1000;
   background-color: red;
   color: white;

@@ -5,7 +5,9 @@ interface ImageContainerProps {
   animate: boolean;
 }
 
-export const ImageContainer = styled.div<ImageContainerProps>`
+export const ImageContainer = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'animate',
+})<ImageContainerProps>`
   opacity: 0.5;
   height: calc(100% - 120px);
   position: absolute;

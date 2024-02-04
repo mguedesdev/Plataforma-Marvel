@@ -26,7 +26,9 @@ interface AvailableProps {
   needBg: boolean;
 }
 
-export const ImageIconContainer = styled.div<AvailableProps>`
+export const ImageIconContainer = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'needBg',})
+  <AvailableProps>`
   margin-top: 10px;
   img {
     width: 50px;

@@ -21,7 +21,9 @@ export const CustomSelectContainer = styled.div`
   width: 160px;
 `;
 
-export const CustomSelectValue = styled.div<CustomSelectContainerProps>`
+export const CustomSelectValue = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'isOpen'})
+  <CustomSelectContainerProps>`
   background-color: black;
   display: flex;
   justify-content: space-between;
@@ -30,8 +32,6 @@ export const CustomSelectValue = styled.div<CustomSelectContainerProps>`
   padding: 10px;
   border-radius: 10px;
   gap: 10px;
-
-  
 
   img {
     transition: all 0.3s ease-in-out;

@@ -8,7 +8,11 @@ interface LogoProps {
 function Logo({ fontSize = '60px', animate }: LogoProps) {
   return (
     <LinkLogo to="/">
-      <LogoContainer fontSize={fontSize} animate={animate}> MARVEL </LogoContainer>
+      <LogoContainer
+        fontSize={fontSize}
+        animate={animate}>
+        MARVEL
+      </LogoContainer>
     </LinkLogo>
   )
 }

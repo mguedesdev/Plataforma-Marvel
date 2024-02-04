@@ -12,7 +12,9 @@ interface DetailsOpenProps {
   detailsOpen: boolean;
 }
 
-export const CardContainer = styled.div<CardContainerProps>`
+export const CardContainer = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'animate' && prop !== 'isCardSelected' && prop !== 'detailsOpen',
+  })<CardContainerProps>`
   display: flex;
   position: relative;
   justify-content: center;
@@ -97,7 +99,9 @@ export const BtnDetails = styled.button`
   }
 `;
 
-export const ModalContainer = styled.div<DetailsOpenProps>`
+export const ModalContainer = styled.div.withConfig({
+  shouldForwardProp: (prop) => prop !== 'detailsOpen',
+  })<DetailsOpenProps>`
   position: fixed;
   top: 0;
   left: 0;

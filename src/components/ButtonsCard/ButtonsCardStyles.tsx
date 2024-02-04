@@ -5,7 +5,9 @@ interface ButtonNextProps {
   show: boolean;
 }
 
-export const ButtonCard = styled.button<ButtonNextProps>`
+export const ButtonCard = styled.button.withConfig({
+  shouldForwardProp: (prop) => prop !== 'show',
+  })<ButtonNextProps>`
   position: absolute;
   cursor: pointer;
   z-index: 1;

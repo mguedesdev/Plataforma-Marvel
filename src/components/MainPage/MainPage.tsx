@@ -29,12 +29,11 @@ function MainPage( { data, start } : cardItem) {
   
   return (
     <CardsContainer>
-      {displayedItems.map((item, index) => {        
+      {displayedItems.map((item, index) => {
         return (
-          <CardContainer>
+          <CardContainer key={item.id}>
             <Card
               animate={true} 
-              key={item.id}
               item={item}
               index={index}
               selectedCardId={selectedCardId}
