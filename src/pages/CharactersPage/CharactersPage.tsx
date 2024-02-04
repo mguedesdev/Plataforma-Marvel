@@ -1,9 +1,10 @@
-import { MainContainer, CardsContainer, ButtonNext, CardContainer } from "./CharactersPageStyles";
-import ImageBg from "../../components/ImageBg";
+import { MainContainer, CardsContainer, CardContainer } from "./CharactersPageStyles";
 import CardCharacter from "../../components/Card/Card";
+import ImageBg from "../../components/ImageBg";
 import RightArrow from '../../assets/right-arrow.svg';
 import LeftArrow from '../../assets/left-arrow.svg';
 import charactersData from "../../data/charactersData";
+import ButtonsCard from "../../components/ButtonsCard/ButtonsCard";
 
 import { useState } from "react";
 
@@ -32,10 +33,6 @@ function CharactersPage() {
     <MainContainer>
       <ImageBg animate={false} />
 
-      <ButtonNext onClick={handlePrevious} position='left' show={start > 0}>
-        <img src={LeftArrow} alt="Left Arrow" />
-      </ButtonNext>
-
       <CardsContainer>
         {[0, 1, 2].map((i, index) => {
           const character = charactersData[(start + i) % charactersData.length];
@@ -54,10 +51,19 @@ function CharactersPage() {
           );
         })}
       </CardsContainer>
-
-      <ButtonNext onClick={handleNext} position="right" show={true}>
-        <img src={RightArrow} alt="Right Arrow" />
-      </ButtonNext>
+      
+      
+      <ButtonsCard
+        nextPreviousCard={handleNext}
+        start={true} Arrow={RightArrow}
+        position='right'
+      />
+      <ButtonsCard
+        nextPreviousCard={handlePrevious}
+        start={start > 0}
+        Arrow={LeftArrow}
+        position='left'
+      />
       
     </MainContainer>
   )

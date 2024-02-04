@@ -25,6 +25,7 @@ export const CardDetailsContent = styled.div<CardDetailsProps>`
 
   h1 {
     font-size: 30px;
+    text-align: center;
   }
 
   h2{

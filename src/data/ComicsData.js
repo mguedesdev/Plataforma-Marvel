@@ -12,7 +12,7 @@ const comicsData = [
   },
   {
     id: 2,
-    title: "Surfista Prateado':'Parábola",
+    title: "Surfista Prateado : Parábola",
     description: "O único oponente do Devorador de Mundos é o herói que ele aprisionou na Terra: o Surfista Prateado, Galactus jurou não consumir o planeta, mas e se, em vez disso, ele transformar a civilização em seus adoradores?",
     image: "../../src/assets/comics/card-hq2.png",
     criticRating: 4,

@@ -1,4 +1,4 @@
-import { MainContainer, CardsContainer, ButtonNext, FilterContainer, CardContainer} from "./MoviesPageStyles";
+import { MainContainer, CardsContainer, FilterContainer, CardContainer} from "./MoviesPageStyles";
 import CustomSelect from "../../components/CustomSelectFilter/CustomSelect";
 import ImageBg from "../../components/ImageBg";
 import RightArrow from '../../assets/right-arrow.svg';
@@ -7,6 +7,7 @@ import { useState } from "react";
 import moviesData from "../../data/moviesData";
 import CardCharacter from "../../components/Card/Card";
 import { CardItem } from "../../types/cardItem";
+import ButtonsCard from "../../components/ButtonsCard/ButtonsCard";
 
 function MoviesPage() {
   const [start, setStart] = useState(0);
@@ -84,14 +85,17 @@ function MoviesPage() {
       </CardsContainer>
       </div>
 
-      <ButtonNext onClick={handlePrevious} position='left' show={start > 0}>
-        <img src={LeftArrow} alt="Left Arrow" />
-      </ButtonNext>
-      
-      <ButtonNext onClick={handleNext} position="right" show={true}>
-        <img src={RightArrow} alt="Right Arrow" />
-      </ButtonNext>
-
+      <ButtonsCard
+        nextPreviousCard={handleNext}
+        start={true} Arrow={RightArrow}
+        position='right'
+      />
+      <ButtonsCard
+        nextPreviousCard={handlePrevious}
+        start={start > 0}
+        Arrow={LeftArrow}
+        position='left'
+      />
 
     </MainContainer>
   )

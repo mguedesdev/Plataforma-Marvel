@@ -18,7 +18,7 @@ function Card({ item, isEntering, isExiting, setSelectedCard, selectedCardId, in
 
   const handleDetails = () => {
     setDetailsOpen(!detailsOpen);
-    setSelectedCard(item.id);
+    setSelectedCard(item?.id ? item.id : 0);
   }
 
   const isCardSelected = selectedCardId === item.id;
