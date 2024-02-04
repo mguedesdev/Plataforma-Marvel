@@ -1,5 +1,5 @@
 import { MainContainer, CardsContainer, CardContainer } from "./CharactersPageStyles";
-import CardCharacter from "../../components/Card/Card";
+import Card from "../../components/Card/Card";
 import ImageBg from "../../components/ImageBg";
 import RightArrow from '../../assets/right-arrow.svg';
 import LeftArrow from '../../assets/left-arrow.svg';
@@ -35,14 +35,14 @@ function CharactersPage() {
 
       <CardsContainer>
         {[0, 1, 2].map((i, index) => {
-          const character = charactersData[(start + i) % charactersData.length];
+          const item = charactersData[(start + i) % charactersData.length];
           return (
-            <CardContainer >
-              <CardCharacter
+            <CardContainer>
+              <Card
                 isExiting={isTransitioning} 
                 isEntering={!isTransitioning} 
-                key={character.id}
-                item={character}
+                key={item.id}
+                item={item}
                 index={index}
                 selectedCardId={selectedCardId}
                 setSelectedCard={handleSelectCard}

@@ -1,4 +1,4 @@
-import { MainContainer, MainContent, Form, BtnLogin, SaveLogin, Register} from './LoginPageStyles';
+import { MainContainer, MainContent, Form, BtnLogin, SaveLogin, Register, CheckBox} from './LoginPageStyles';
 import Logo from '../../components/Logo/Logo';
 import ImageBg from '../../components/ImageBg';
 
@@ -10,19 +10,18 @@ function LoginPage() {
         <Logo fontSize='100px' animate={true}/>
 
         <Form>
-        <div style={{marginTop: '180px'}}>
+        
           <h1>Bem-vindo(a) de volta!</h1>
-          <h3>Acesse sua conta:</h3>
-        </div>
+          <h2>Acesse sua conta:</h2>
 
           <input type="text" placeholder="Usuário" />
           <input type="password" placeholder="Senha" />
 
           <SaveLogin>
-            <div>
+            <CheckBox>
               <input type="checkbox" />
               <label>Salvar login</label>
-            </div>
+            </CheckBox>
             <a href="#">Esqueci a senha?</a>
           </SaveLogin>
 

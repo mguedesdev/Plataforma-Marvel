@@ -6,7 +6,6 @@ export const MainContainer = styled.main`
   align-items: center;
   height: calc(100vh - 120px);
   font-family: "Axiforma", sans-serif;
-  z-index: -1;
 `;
 
 export const CardsContainer = styled.div`
