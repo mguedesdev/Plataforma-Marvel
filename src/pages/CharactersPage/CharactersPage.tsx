@@ -1,70 +1,42 @@
-import { MainContainer, CardsContainer, CardContainer } from "./CharactersPageStyles";
-import Card from "../../components/Card/Card";
+import MainPage from "../../components/MainPage/MainPage";
 import ImageBg from "../../components/ImageBg";
 import RightArrow from '../../assets/right-arrow.svg';
 import LeftArrow from '../../assets/left-arrow.svg';
-import charactersData from "../../data/charactersData";
 import ButtonsCard from "../../components/ButtonsCard/ButtonsCard";
+import { MainContainer } from "../../styles/ContainerPageStyles";
 
+import charactersData from "../../data/charactersData";
 import { useState } from "react";
 
 function CharactersPage() {
   const [start, setStart] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [selectedCardId, setSelectedCardId] = useState(0);
-
-  const handleSelectCard = (id: number) => {
-    setSelectedCardId(id);
-  }
 
   const handleNext = () => {
-    setIsTransitioning(true);
     setStart(prevStart => (prevStart + 1) % charactersData.length);
-    setIsTransitioning(false);
   }
 
   const handlePrevious = () => {
-    setIsTransitioning(true);
     setStart(prevStart => (prevStart - 1) % charactersData.length);
-    setIsTransitioning(false);
   }
 
   return (
     <MainContainer>
       <ImageBg animate={false} />
 
-      <CardsContainer>
-        {[0, 1, 2].map((i, index) => {
-          const item = charactersData[(start + i) % charactersData.length];
-          return (
-            <CardContainer>
-              <Card
-                isExiting={isTransitioning} 
-                isEntering={!isTransitioning} 
-                key={item.id}
-                item={item}
-                index={index}
-                selectedCardId={selectedCardId}
-                setSelectedCard={handleSelectCard}
-              />
-            </CardContainer>
-          );
-        })}
-      </CardsContainer>
-      
-      
+      <MainPage data={charactersData} start={start}/>
+
       <ButtonsCard
         nextPreviousCard={handleNext}
         start={true} Arrow={RightArrow}
         position='right'
       />
+
       <ButtonsCard
         nextPreviousCard={handlePrevious}
         start={start > 0}
         Arrow={LeftArrow}
         position='left'
       />
-      
     </MainContainer>
   )
 }

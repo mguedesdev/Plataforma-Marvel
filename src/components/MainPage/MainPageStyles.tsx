@@ -1,13 +1,5 @@
 import styled from 'styled-components';
 
-export const MainContainer = styled.main`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 120px);
-  font-family: "Axiforma", sans-serif;
-`;
-
 export const CardsContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr); 

@@ -12,6 +12,7 @@ function ButtonsCard({ nextPreviousCard, start, Arrow, position}: ButtonsNextCar
     <ButtonCard onClick={nextPreviousCard} position={position} show={start}>
         <img src={Arrow} alt="Arrow" />
     </ButtonCard>
+    
   )
 }
 

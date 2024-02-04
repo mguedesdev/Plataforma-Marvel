@@ -12,3 +12,4 @@ export interface CardItem {
 
   available?: string[];
 }
+

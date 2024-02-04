@@ -1,5 +1,12 @@
 import styled from "styled-components";
 
+export const MainContainer = styled.div`
+  font-family: "Axiforma", sans-serif;
+  position: relative;
+  width: 100%;
+  z-index: 10;
+`;
+
 export const CustomSelectContainer = styled.div`
   position: absolute;
   border: 2px solid red;
