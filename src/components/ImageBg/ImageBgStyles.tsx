@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { moveBackground, fadeIn, moveGradient } from '../../styles/animations';
+import { moveBackground, fadeIn, moveGradient, fadeIn01 } from '../../styles/animations';
 
 interface ImageContainerProps {
   animate: boolean;
@@ -14,11 +14,11 @@ export const ImageContainer = styled.div.withConfig({
   right: 0px;
   overflow: hidden;
   z-index: -1;
-
-
+  
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
     ${({animate}) => animate && css`
       animation: ${moveBackground} 3s forwards;
       animation-delay: 0.8s;
@@ -48,5 +48,35 @@ export const ImageContainer = styled.div.withConfig({
     animation: ${fadeIn} 2s forwards;
     animation-delay: 0.8s;
   `}
+
+  @media (max-width: 600px) {
+    ${({animate}) => animate && css`
+      animation: ${fadeIn01} 2s forwards;
+    `}
+
+    img {
+      animation: none;
+
+    }
+    
+    &:after {
+      background: transparent;
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 1025px) {
+    width: 100%;
+    ${({animate}) => animate && css`
+      animation: ${fadeIn01} 2s forwards;
+    `}
+
+    img {
+      animation: none;
+    }
+    
+    &:after {
+      background: transparent;
+    }
+  }
   
 `;

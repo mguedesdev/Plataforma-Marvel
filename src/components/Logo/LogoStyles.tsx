@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { moveLogo } from "../../styles/animations";
+import { moveLogo, moveLogoMobile, moveLogoTablet } from "../../styles/animations";
 import { Link } from 'react-router-dom';
 
 interface LogoContainerProps {
@@ -42,5 +42,20 @@ export const LogoContainer = styled.span.withConfig({
     
     animation: ${moveLogo} 3s forwards;
   `}
+
+  @media (max-width: 600px) {
+    font-size: 80px;
+
+    ${({ animate }) => animate && css`
+      animation: ${moveLogoMobile} 3s forwards;
+    `}
+  }
+
+  @media (min-width: 600px) and (max-width: 1025px) {
+    font-size: 100px;
+    ${({ animate }) => animate && css`
+      animation: ${moveLogoTablet} 3s forwards;
+    `}
+  }
 
 `; 

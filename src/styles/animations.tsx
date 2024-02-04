@@ -58,3 +58,38 @@ export const moveLogo = keyframes`
     transform: translate(0, -50%);
   }
 `;
+
+export const moveLogoMobile = keyframes`
+  0%, 25% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 15%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+export const moveLogoTablet = keyframes`
+  0%, 25% {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+`;
+
+export const fadeIn01 = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.1;
+  }
+`;

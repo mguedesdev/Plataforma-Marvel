@@ -10,6 +10,15 @@ export const MainContainer = styled.main`
   padding-left: 10vw;
   height: 100vh;
   font-family: "Axiforma", sans-serif;
+
+  @media (max-width: 600px) {
+    align-items: center;
+    padding: 0 10%;
+  }
+  @media (min-width: 600px) and (max-width: 1025px) {
+    align-items: center;
+    padding: 0 10%;
+  }
 `;
 
 export const MainContent = styled.div`
@@ -30,6 +39,29 @@ export const MainContent = styled.div`
     font-weight: 100;
     color: #84848D;
   }
+
+  @media (min-width: 600px) and (max-width: 1025px) {
+    width: 80%;
+    h1 {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    h1 {
+      margin-top: 100px;
+      font-size: 25px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+  }
 `;
 
 export const Form = styled.form`
@@ -38,6 +70,7 @@ export const Form = styled.form`
   flex-direction: column;
   gap: 20px;
   width: 100%;
+  z-index: 100;
 
   input {
     padding: 20px;
@@ -58,10 +91,35 @@ export const Form = styled.form`
       font-family: "Axiforma", sans-serif;
       font-weight: 100;
     }
+    
   }
 
   animation: ${fadeIn} 3s forwards;
   animation-delay: 2s;
+
+  @media (max-width: 600px) {
+    gap: 10px;
+
+    input {
+      padding: 12px;
+      font-size: 16px;
+
+      &::placeholder {
+        font-size: 16px;
+      }
+    }
+  }
+
+  @media (min-width: 600px) and (max-width: 1025px) {
+    input {
+      padding: 18px;
+      font-size: 18px;
+
+      &::placeholder {
+        font-size: 18px;
+      }
+    }
+  }
   
 `;
 
@@ -80,6 +138,11 @@ export const BtnLogin = styled(Link)`
 
     &:hover {
       background-color: #aa0000;
+    }
+
+    @media (max-width: 600px) {
+      font-size: 24px;
+      margin-top: 50px;
     }
 `;
 
@@ -101,6 +164,20 @@ export const SaveLogin = styled.div`
       color: #FF0000;
     }
   }
+  
+  @media (min-width: 600px) and (max-width: 1025px) {
+    padding: 0px 10px;
+    gap: 10px;
+
+    a{
+      font-size: 18px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    padding: 0px 10px;
+    gap: 10px;
+  }
 `;
 
 export const CheckBox = styled.div`
@@ -120,6 +197,19 @@ export const CheckBox = styled.div`
     font-weight: 500;
     color: #84848D;
   }
+
+  @media (min-width: 600px) and (max-width: 1025px) {
+    gap: 10px;
+
+    input {
+      width: 20px;
+      height: 20px;
+    }
+
+    label {
+      font-size: 18px;
+    }
+  }
 `;
 
 export const Register = styled.div`
@@ -134,6 +224,15 @@ export const Register = styled.div`
   a {
     text-decoration: none;
     color: #FF0000;
+  }
+
+  @media (min-width: 600px) and (max-width: 1025px) {
+    gap: 10px;
+    font-size: 18px;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 14px;
   }
 
 `;
