@@ -1,5 +1,5 @@
 import MainPage from "../../components/MainPage/MainPage";
-import ImageBg from "../../components/ImageBg";
+import ImageBg from "../../components/ImageBg/ImageBg";
 import arrow from '../../assets/arrow.svg';
 import ButtonsCard from "../../components/ButtonsCard/ButtonsCard";
 import { MainContainer } from "../../styles/ContainerPageStyles";

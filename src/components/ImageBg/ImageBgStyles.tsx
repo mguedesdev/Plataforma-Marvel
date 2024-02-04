@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import { moveBackground, fadeIn, moveGradient } from '../styles/animations';
+import { moveBackground, fadeIn, moveGradient } from '../../styles/animations';
 
 interface ImageContainerProps {
   animate: boolean;

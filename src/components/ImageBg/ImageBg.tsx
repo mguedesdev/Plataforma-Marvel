@@ -1,5 +1,5 @@
 
-import bgHome from '../assets/bg-home.png';
+import bgHome from '../../assets/bg-home.png';
 import { ImageContainer } from './ImageBgStyles';
 
 interface ImageBgProps {

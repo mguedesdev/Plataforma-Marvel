@@ -1,6 +1,6 @@
 import { MainContainer, MainContent, Form, BtnLogin, SaveLogin, Register, CheckBox} from './LoginPageStyles';
 import Logo from '../../components/Logo/Logo';
-import ImageBg from '../../components/ImageBg';
+import ImageBg from '../../components/ImageBg/ImageBg';
 
 function LoginPage() {
   return (
