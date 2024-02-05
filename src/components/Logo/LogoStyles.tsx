@@ -1,14 +1,12 @@
 import styled, { css } from 'styled-components';
 import { moveLogo, moveLogoMobile, moveLogoTablet } from "../../styles/animations";
-import { Link } from 'react-router-dom';
 
 interface LogoContainerProps {
   fontSize?: string;
   animate?: boolean;
 }
 
-export const LinkLogo = styled(Link)`
-  text-decoration: none;
+export const LinkLogo = styled.div`
 `;
 
 export const LogoContainer = styled.span.withConfig({
@@ -25,7 +23,7 @@ export const LogoContainer = styled.span.withConfig({
   line-height: 1;
   letter-spacing: 2px;
 
-  cursor: pointer;
+  cursor: default;
   transition: all 0.3s ease;
 
   &:hover {
@@ -43,6 +41,14 @@ export const LogoContainer = styled.span.withConfig({
     animation: ${moveLogo} 3s forwards;
   `}
 
+  @media (max-width: 1025px) {
+    
+    ${({ animate }) => animate && css`
+      font-size: 100px;
+      animation: ${moveLogoTablet} 3s forwards;
+    `}
+  }
+  
   @media (max-width: 600px) {
     font-size: 35px;
     padding: 7px 7px;
@@ -53,12 +59,5 @@ export const LogoContainer = styled.span.withConfig({
     `}
   }
 
-  @media (max-width: 1025px) {
-    
-    ${({ animate }) => animate && css`
-      font-size: 100px;
-      animation: ${moveLogoTablet} 3s forwards;
-    `}
-  }
 
 `; 

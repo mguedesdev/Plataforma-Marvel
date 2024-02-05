@@ -7,7 +7,7 @@ interface LogoProps {
 
 function Logo({ fontSize = '60px', animate }: LogoProps) {
   return (
-    <LinkLogo to="/">
+    <LinkLogo>
       <LogoContainer
         fontSize={fontSize}
         animate={animate}>

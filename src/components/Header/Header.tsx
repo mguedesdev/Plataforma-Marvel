@@ -3,10 +3,19 @@ import profilePic from '../../assets/profile-picture.png';
 import Logo from '../Logo/Logo';
 import menuHeader from '../../assets/menu-header.svg';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Header = () => {
-
   const [showMenu, setShowMenu] = useState(false);
+  
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    localStorage.removeItem('rememberMe');
+
+    navigate('/');
+  };
+
   const handleShowMenu = () => {
     setShowMenu(!showMenu);
   }
@@ -40,7 +49,7 @@ const Header = () => {
         
         <ProfileContainer>
           <ProfileImage src={profilePic} alt="Profile" />
-          <ButtonExit>Sair</ButtonExit>
+          <ButtonExit onClick={handleLogout}>Sair</ButtonExit>
         </ProfileContainer>
       </Nav>
     </HeaderContainer>

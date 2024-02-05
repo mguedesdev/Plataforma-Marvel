@@ -1,38 +1,46 @@
-import { MainContainer, MainContent, Form, BtnLogin, SaveLogin, Register, CheckBox} from './LoginPageStyles';
+import { MainContainer, MainContent} from './LoginPageStyles';
 import Logo from '../../components/Logo/Logo';
 import ImageBg from '../../components/ImageBg/ImageBg';
 
+import { useState, useEffect } from 'react';
+import LoginForm from '../../components/LoginForm/LoginForm';
+import { useNavigate } from 'react-router-dom';
+
 function LoginPage() {
+  const [register, setRegister] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => setHasAnimated(false), 5000);
+  }, []);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const rememberMe = localStorage.getItem('rememberMe') === 'true';
+    const storedUsername = localStorage.getItem('loginUsername');
+
+    if (rememberMe && storedUsername) {
+      navigate('/personagens');
+    }
+  }, [navigate]);
+  
+  const handleRegister = () => {
+    setRegister(!register);
+  }
+
   return (
     <MainContainer>
       <ImageBg animate={true} />
       <MainContent>
         <Logo fontSize='100px' animate={true}/>
 
-        <Form>
+        <LoginForm
+          handleRegister={handleRegister}
+          register={register}
+          animate={hasAnimated} 
+        />
         
-          <h1>Bem-vindo(a) de volta!</h1>
-          <h2>Acesse sua conta:</h2>
-
-          <input type="text" placeholder="Usuário" />
-          <input type="password" placeholder="Senha" />
-
-          <SaveLogin>
-            <CheckBox>
-              <input type="checkbox" />
-              <label>Salvar login</label>
-            </CheckBox>
-            <a href="#">Esqueci a senha?</a>
-          </SaveLogin>
-
-          <BtnLogin to="/personagens">Entrar</BtnLogin>
-
-          <Register>
-            <p>Ainda não tem o login?</p>
-            <a href="#">Cadastre-se</a>
-          </Register>
-          
-        </Form>
       </MainContent>
     </MainContainer>
   )

@@ -93,3 +93,25 @@ export const fadeIn01 = keyframes`
     opacity: 0.1;
   }
 `;
+
+export const formIn = keyframes`
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`;
+
+export const formOut = keyframes`
+  from {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+`;
