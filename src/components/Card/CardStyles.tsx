@@ -39,8 +39,8 @@ export const CardContainer = styled.div.withConfig({
     transform: ${index !== 0 ? 'translateX(calc(-100% + 350px))' : '0'};
   `}
 
-  @media (max-width: 600px) {
-    width: 80%;
+  @media (max-width: 1025px) {
+    width: 70%;
     margin: 0 auto;
     height: 100%;
     
@@ -52,6 +52,10 @@ export const CardContainer = styled.div.withConfig({
     justify-content: center;
     transform: 0;
   `}
+  }
+
+  @media (max-width: 600px) {
+    width: 80%;
   }
   
 `;
@@ -90,17 +94,30 @@ export const CardContent = styled.div`
     border-radius: 10px;
   }
 
+  @media (max-width: 1025px) {
+    padding: 25px 60px;
+    width: 100%;
+    h1{
+      font-size: 40px;
+      line-height: 0.8;
+      padding: 15px 0;
+    }
+
+    p {
+      font-size: 24px;
+      padding-right: 5px;
+    }
+  }
+
   @media (max-width: 600px) {
     padding: 10px 30px;
     h1{
       font-size: 25px;
-      line-height: 0.8;
       padding: 10px 0;
     }
 
     p {
       font-size: 14px;
-      padding-right: 5px;
     }
   }
 `;
@@ -126,6 +143,11 @@ export const BtnDetails = styled.button`
     transform: scale(0.9);
   }
 
+  @media (max-width: 1025px) {
+    font-size: 42px;
+    margin-top: 10px;
+  }
+
   @media (max-width: 600px) {
     font-size: 20px;
     margin-top: 10px;
@@ -138,7 +160,7 @@ export const ModalContainer = styled.div.withConfig({
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 3000;
+  z-index: 2;
   width: 100%;
   height: 100%;
   background: linear-gradient(to right, rgba(0, 0, 0, 1) 50%, transparent);
@@ -148,8 +170,8 @@ export const ModalContainer = styled.div.withConfig({
   
   animation: ${({ detailsOpen }) => detailsOpen ? fadeIn : fadeOut} 0.5s ease-in-out both;
 
-  @media screen {
-    display: none;
+  @media (max-width: 1025px) {
+    display:none;
   }
 `;
 
@@ -160,5 +182,10 @@ export const CardImage = styled.img`
   position: absolute;
   z-index: 1;
   border-radius: 30px;
+
+  @media (max-width: 1025px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 

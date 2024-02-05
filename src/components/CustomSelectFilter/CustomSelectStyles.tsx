@@ -9,8 +9,13 @@ export const MainContainer = styled.div`
   position: relative;
   width: 100%;
   z-index:2;
+  @media (max-width: 1025px) {
+    margin-bottom: 2%;
+  }
+  @media (max-width: 600px) {
+    margin-bottom: 0;
+  }
 `;
-
 
 export const CustomSelectContainer = styled.div`
   position: absolute;
@@ -22,9 +27,18 @@ export const CustomSelectContainer = styled.div`
   width: 160px;
   background-color: #000;
 
-  @media (max-width: 600px) {
-    margin-left: 35px;
+  @media (max-width: 1025px) {
+    margin-left: 15%;
     border-radius: 10px;
+    width: fit-content;
+    font-size: 20px;
+  }
+
+  @media (max-width: 600px) {
+    margin-left: 10%;
+    border-radius: 10px;
+    width: fit-content;
+    font-size: 14px;
   }
 `;
 

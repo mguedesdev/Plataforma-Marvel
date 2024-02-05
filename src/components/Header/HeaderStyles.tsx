@@ -13,13 +13,13 @@ export const HeaderContainer = styled.header.withConfig({
   align-items: center;
   justify-content: space-between;
   z-index: 10;
+  background-color: #000;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
-  @media (max-width: 600px) {
-    padding: 20px 20px;
-    background-color: #000;
-    position: fixed;
-    top: 0;
-    width: 100%;
+  @media (max-width: 1025px) {
+    /* padding: 20px 20px; */
 
     &::before {
       content: '';
@@ -43,6 +43,10 @@ export const HeaderContainer = styled.header.withConfig({
       `}
     }
   }
+
+  @media (max-width: 600px) {
+    padding: 20px 20px;
+  }
 `;
 
 export const Nav = styled.nav.withConfig({
@@ -53,29 +57,38 @@ export const Nav = styled.nav.withConfig({
   align-items: center;
   gap: 70px;
   z-index: 10;
+  overflow: hidden;
 
-  @media (max-width: 600px) {
-    max-width: ${({ showMenu }) => showMenu ? '60vw' : '0'};
+  @media (max-width: 1025px) {
+    max-width: ${({ showMenu }) => showMenu ? '40vw' : '0'};
     width: ${({ showMenu }) => showMenu ? '100%' : '0'};
-    overflow: hidden;
-    transition: all 0.4s ease-in-out;
+
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-end;
-    padding-top: 20px;
-
-    padding-right: ${({showMenu }) => showMenu ? '20px' : '0'};
-    padding-left: ${({showMenu }) => showMenu ? '20px' : '0'};
-    
-    position: absolute;
-    top: 70px;
+    transition: all 0.4s ease-in-out;
     right: 0;
-    height: calc(100vh - 70px);
+
+    padding: ${({showMenu }) => showMenu ? '0px 40px' : '0'};
+    position: absolute;
+    top: 120px;
+    height: calc(100vh - 120px);
     background-color: #000;
     z-index: 10;
-    gap: 10px;
+    gap: 25px;
     
+  }
+
+  @media (max-width: 600px) {
+    max-width: ${({ showMenu }) => showMenu ? '60vw' : '0'};
+    width: ${({ showMenu }) => showMenu ? '100%' : '0'};
+    padding: ${({showMenu }) => showMenu ? '0px 20px' : '0'};
+    gap: 10px;
+
+    top: 70px;
+    height: calc(100vh - 70px);
+
   }
 `;
 
@@ -99,9 +112,11 @@ export const StyledNavLink  = styled(NavLink)`
     opacity: 1;
   }
 
+  @media (max-width: 1025px) {
+    font-size: 24px;
+  }
   @media (max-width: 600px) {
     font-size: 20px;
-
   }
 `;
 
@@ -112,10 +127,13 @@ export const ProfileContainer = styled.div`
   gap: 10px;
   padding-right: 20px;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     position: absolute;
-    bottom: 40px;
+    bottom: 60px;
     padding-right: 0px;
+  }
+  @media (max-width: 600px) {
+    bottom: 40px;
 
   }
 `;
@@ -126,6 +144,10 @@ export const ProfileImage = styled.img`
   border-radius: 50%;
   box-shadow: rgba(255, 0, 0, 0.6) 2px 1px 10px 0px;
 
+  @media (max-width: 1025px) {
+    width: 40px;
+    height: 40px;
+  }
   @media (max-width: 600px) {
     width: 35px;
     height: 35px;
@@ -165,8 +187,7 @@ export const MenuButton = styled.button`
     height: 100%;
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     display: block;
-
   }
 `;

@@ -8,12 +8,17 @@ export const CardsContainer = styled.div`
   margin-top: 80px;
   z-index: 1;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     width: 100%;
-    padding-top: 10%;
+    padding-top: 7%;
     grid-template-columns: 1fr;
-    grid-template-rows: repeat(1, 450px);
+    grid-template-rows: repeat(1, 850px);
     margin-top: 0px;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-rows: repeat(1, 450px);
+    padding-top: 10%;
   }
 `;
 
@@ -22,7 +27,7 @@ export const CardContainer = styled.div`
   width: 100%;
   height: 100%;
   
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     display: none;
     &:nth-child(1) {
       display: flex !important;

@@ -13,14 +13,19 @@ export const ButtonsContainer = styled.div`
   height: 100%;
   z-index: 0;
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     bottom: 0px;
     background-color: #000;
     width: 100%;
-    height: 55px;
+    height: 75px;
     z-index: 0;
 
   }
+
+  @media (max-width: 600px) {
+    height: 55px;
+  }
+  
 `;
 
 export const ButtonCard = styled.button.withConfig({
@@ -61,12 +66,12 @@ export const ButtonCard = styled.button.withConfig({
     transform: scale(1.2);
   }
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     z-index: 1;
     
     img{
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
     }
 
     ${({ position }) => position === 'right' && `
@@ -76,5 +81,13 @@ export const ButtonCard = styled.button.withConfig({
     ${({ position }) => position === 'left' && `
       margin-left: 30px;
     `}
+  }
+
+  @media (max-width: 600px) {
+    img{
+      width: 30px;
+      height: 30px;
+    }
+
   }
 `;

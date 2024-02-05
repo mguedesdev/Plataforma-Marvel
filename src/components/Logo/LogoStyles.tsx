@@ -53,7 +53,7 @@ export const LogoContainer = styled.span.withConfig({
     `}
   }
 
-  @media (min-width: 600px) and (max-width: 1025px) {
+  @media (max-width: 1025px) {
     
     ${({ animate }) => animate && css`
       font-size: 100px;

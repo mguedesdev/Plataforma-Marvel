@@ -12,7 +12,7 @@ export const CardDetailsContainer = styled.div`
   height: 100%;
   background: linear-gradient(to bottom, red, rgba(78, 0, 0, 1));
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     z-index: 2;
   }
 `;
@@ -60,6 +60,36 @@ export const CardDetailsContent = styled.div.withConfig({
     margin-right: 5px;
   }
 
+  @media (max-width: 1025px) {
+    width: 100%;
+    padding: 60px;
+    gap: 40px;
+    justify-content: space-evenly;
+
+    h1 {
+      font-size: 42px;
+    }
+
+    h2{
+      font-size: 36px;
+    }
+
+    h3{
+      font-size: 30px;
+    }
+
+    li{ 
+      font-size: 24px;
+    }
+
+    img {
+      width: 40px;
+      height: 40px;
+      margin-top: 5px;
+      margin-right: 5px;
+    }
+  }
+
   @media (max-width: 600px) {
     width: 100%;
     padding: 20px;
@@ -100,4 +130,18 @@ export const BtnClose = styled.img`
   right: 25px;
   width: 30px;
   height: 30px;
+
+  @media (max-width: 1025px) {
+    width: 40px;
+    height: 40px;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  @media (max-width: 600px) {
+    width: 25px;
+    height: 25px;
+    bottom: 20px;
+    right: 20px;
+  }
 `;

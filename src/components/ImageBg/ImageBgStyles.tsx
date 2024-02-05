@@ -9,7 +9,7 @@ export const ImageContainer = styled.div.withConfig({
   shouldForwardProp: (prop) => prop !== 'animate',
 })<ImageContainerProps>`
   opacity: 0.5;
-  height: calc(100% - 120px);
+  height: 100%;
   position: absolute;
   right: 0px;
   overflow: hidden;
@@ -49,10 +49,9 @@ export const ImageContainer = styled.div.withConfig({
     animation-delay: 0.8s;
   `}
 
-  @media (max-width: 600px) {
+  @media (max-width: 1025px) {
     height: 100%;
     opacity: 0.2;
-
     position: fixed;
     ${({animate}) => animate && css`
       animation: ${fadeIn01} 2s forwards;
@@ -67,19 +66,6 @@ export const ImageContainer = styled.div.withConfig({
     }
   }
 
-  @media (min-width: 600px) and (max-width: 1025px) {
-    width: 100%;
-    ${({animate}) => animate && css`
-      animation: ${fadeIn01} 2s forwards;
-    `}
-
-    img {
-      animation: none;
-    }
-    
-    &:after {
-      background: transparent;
-    }
-  }
+  
   
 `;
