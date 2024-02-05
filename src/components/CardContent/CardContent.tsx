@@ -25,10 +25,13 @@ function CardContent({item}: MovieContentStylesProps) {
 
                   {item.available && (
                     <>
-                      <h3>Disponível para compra::</h3>
+                      <h3>Disponível para compra:</h3>
                       <ImageIconContainer needBg={false}>
                       {item.available.map((icon) => (
-                        <img src={icon} alt="" />
+                        <img 
+                          key={icon}
+                          src={icon}
+                          alt="" />
                       ))}
                       </ImageIconContainer>
                     </>

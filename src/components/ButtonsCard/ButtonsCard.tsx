@@ -1,17 +1,32 @@
-import { ButtonCard } from './ButtonsCardStyles'
+import { ButtonCard, ButtonsContainer } from './ButtonsCardStyles'
+import Arrow from '../../assets/arrow.svg'
+import { CardItem } from '../../types/cardItem';
 
 interface ButtonsNextCardProps {
-  nextPreviousCard: () => void;
-  start: boolean;
-  Arrow: string;
-  position: string;
+  data: CardItem[];
+  setStart: (value: number | ((prevVal: number) => number)) => void;
 }
 
-function ButtonsCard({ nextPreviousCard, start, Arrow, position}: ButtonsNextCardProps) {
+function ButtonsCard({ data, setStart }: ButtonsNextCardProps) {
+  const handleNext = () => {
+    setStart(prevStart => (prevStart + 1) % data.length);
+  }
+
+  const handlePrevious = () => {
+    setStart(prevStart => {
+      return prevStart === 0 ? data.length - 1 : prevStart - 1;
+    });
+  };
+
   return (
-    <ButtonCard onClick={nextPreviousCard} position={position} show={start}>
-        <img src={Arrow} alt="Arrow" />
-    </ButtonCard>
+    <ButtonsContainer>
+      <ButtonCard onClick={handleNext} position={'right'} >
+          <img src={Arrow} alt="Arrow" />
+      </ButtonCard>
+      <ButtonCard onClick={handlePrevious} position={'left'} >
+          <img src={Arrow} alt="Arrow" />
+      </ButtonCard>
+    </ButtonsContainer>
     
   )
 }

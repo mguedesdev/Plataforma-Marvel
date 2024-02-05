@@ -140,6 +140,11 @@ export const BtnLogin = styled(Link)`
       background-color: #aa0000;
     }
 
+    @media (min-width: 600px) and (max-width: 1025px) {
+      
+      margin-top: 50px;
+    }
+
     @media (max-width: 600px) {
       font-size: 24px;
       margin-top: 50px;

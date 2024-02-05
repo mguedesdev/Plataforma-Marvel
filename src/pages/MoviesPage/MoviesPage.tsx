@@ -1,8 +1,7 @@
 import MainPage from "../../components/MainPage/MainPage";
 import ImageBg from "../../components/ImageBg/ImageBg";
-import arrow from '../../assets/arrow.svg';
 import ButtonsCard from "../../components/ButtonsCard/ButtonsCard";
-import { MainContainer } from "../../styles/ContainerPageStyles";
+import { MainContainer, MainContent } from "../../styles/ContainerPageStyles";
 import CustomSelect from "../../components/CustomSelectFilter/CustomSelect";
 
 import moviesData from "../../data/moviesData";
@@ -18,14 +17,6 @@ function MoviesPage() {
     { label: 'Lançamento', value: 'releaseDate' },
     { label: 'Cronologia', value: 'chronologicalOrder' },
   ];
-
-  const handleNext = () => {
-    setStart(prevStart => (prevStart + 1) % moviesData.length);
-  }
-
-  const handlePrevious = () => {
-    setStart(prevStart => (prevStart - 1) % moviesData.length);
-  }
 
   const compareDates = (dateA: string, dateB: string) => {
     return new Date(dateA).getTime() - new Date(dateB).getTime();
@@ -46,7 +37,7 @@ function MoviesPage() {
     <MainContainer>
       <ImageBg animate={false} />
       
-      <div>
+      <MainContent >
         <CustomSelect
           options={filterOptions}
           value={filterOptions.find((option) => option.value === filter)?.label || ''}
@@ -54,19 +45,11 @@ function MoviesPage() {
         />
 
         <MainPage data={displayedMovies} start={start} />
-      </div>
+      </MainContent>
 
       <ButtonsCard
-        nextPreviousCard={handleNext}
-        start={true} Arrow={arrow}
-        position='right'
-      />
-
-      <ButtonsCard
-        nextPreviousCard={handlePrevious}
-        start={start > 0}
-        Arrow={arrow}
-        position='left'
+        data={displayedMovies}
+        setStart={setStart}
       />
 
     </MainContainer>

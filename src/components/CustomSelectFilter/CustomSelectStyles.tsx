@@ -8,8 +8,9 @@ export const MainContainer = styled.div`
   font-family: "Axiforma", sans-serif;
   position: relative;
   width: 100%;
-  z-index: 2;
+  z-index:2;
 `;
+
 
 export const CustomSelectContainer = styled.div`
   position: absolute;
@@ -19,6 +20,12 @@ export const CustomSelectContainer = styled.div`
   cursor: pointer;
   border-radius: 10px;
   width: 160px;
+  background-color: #000;
+
+  @media (max-width: 600px) {
+    margin-left: 35px;
+    border-radius: 10px;
+  }
 `;
 
 export const CustomSelectValue = styled.div.withConfig({

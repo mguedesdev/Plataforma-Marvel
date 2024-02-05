@@ -50,13 +50,16 @@ export const ImageContainer = styled.div.withConfig({
   `}
 
   @media (max-width: 600px) {
+    height: 100%;
+    opacity: 0.2;
+
+    position: fixed;
     ${({animate}) => animate && css`
       animation: ${fadeIn01} 2s forwards;
     `}
 
     img {
       animation: none;
-
     }
     
     &:after {

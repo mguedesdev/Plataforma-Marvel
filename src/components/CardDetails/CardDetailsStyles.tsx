@@ -11,6 +11,10 @@ export const CardDetailsContainer = styled.div`
   width: 100%;
   height: 100%;
   background: linear-gradient(to bottom, red, rgba(78, 0, 0, 1));
+
+  @media (max-width: 600px) {
+    z-index: 2;
+  }
 `;
 
 export const CardDetailsContent = styled.div.withConfig({
@@ -54,6 +58,36 @@ export const CardDetailsContent = styled.div.withConfig({
     height: 30px;
     margin-top: 10px;
     margin-right: 5px;
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    padding: 20px;
+    gap: 20px;
+    justify-content: space-evenly;
+
+    h1 {
+      font-size: 22px;
+    }
+
+    h2{
+      font-size: 16px;
+    }
+
+    h3{
+      font-size: 20px;
+    }
+
+    li{ 
+      font-size: 14px;
+    }
+
+    img {
+      width: 20px;
+      height: 20px;
+      margin-top: 5px;
+      margin-right: 5px;
+    }
   }
 `;
 

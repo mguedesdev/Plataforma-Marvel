@@ -2,18 +2,37 @@ import styled from "styled-components";
 
 interface ButtonNextProps {
   position: string;
-  show: boolean;
 }
 
+export const ButtonsContainer = styled.div`
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+
+  @media (max-width: 600px) {
+    bottom: 0px;
+    background-color: #000;
+    width: 100%;
+    height: 55px;
+    z-index: 0;
+
+  }
+`;
+
 export const ButtonCard = styled.button.withConfig({
-  shouldForwardProp: (prop) => prop !== 'show',
-  })<ButtonNextProps>`
+  shouldForwardProp: (prop) => prop !== 'position',
+})<ButtonNextProps>`
   position: absolute;
   cursor: pointer;
   z-index: 1;
   background-color: transparent;
   border: none;
   transition: transform 0.2s;
+  width: 50px;
 
   ${({ position }) => position === 'right' && `
     right: 0;
@@ -33,10 +52,6 @@ export const ButtonCard = styled.button.withConfig({
       margin-left: 100px;
   `}
 
-  ${({ show }) => !show && `
-    display: none;
-  `}
-
   img{
     width: 50px;
     height: 50px;
@@ -44,5 +59,22 @@ export const ButtonCard = styled.button.withConfig({
 
   &:hover{
     transform: scale(1.2);
+  }
+
+  @media (max-width: 600px) {
+    z-index: 1;
+    
+    img{
+      width: 30px;
+      height: 30px;
+    }
+
+    ${({ position }) => position === 'right' && `
+      margin-right: 30px;
+    `}
+
+    ${({ position }) => position === 'left' && `
+      margin-left: 30px;
+    `}
   }
 `;

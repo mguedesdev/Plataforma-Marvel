@@ -44,16 +44,19 @@ export const LogoContainer = styled.span.withConfig({
   `}
 
   @media (max-width: 600px) {
-    font-size: 80px;
+    font-size: 35px;
+    padding: 7px 7px;
 
     ${({ animate }) => animate && css`
+      font-size: 80px;
       animation: ${moveLogoMobile} 3s forwards;
     `}
   }
 
   @media (min-width: 600px) and (max-width: 1025px) {
-    font-size: 100px;
+    
     ${({ animate }) => animate && css`
+      font-size: 100px;
       animation: ${moveLogoTablet} 3s forwards;
     `}
   }

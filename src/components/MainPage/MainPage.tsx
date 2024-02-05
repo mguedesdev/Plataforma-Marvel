@@ -34,6 +34,7 @@ function MainPage( { data, start } : cardItem) {
           <CardContainer key={item.id}>
             <Card
               animate={true} 
+              key={item?.id ? item.id + index : index}
               item={item}
               index={index}
               selectedCardId={selectedCardId}

@@ -8,6 +8,7 @@ export const Content = styled.div`
     font-size: 14px;
     font-weight: 100;
   }
+
 `;
 
 export const Available = styled.div`
