@@ -116,7 +116,7 @@ Esta página permite que os usuários façam login em suas contas existentes ou 
 
 -   `useState` é usado para gerenciar o estado local da página, incluindo alternar entre modos de login e registro.
 -   `useEffect` é empregado para controlar a animação inicial e verificar o LocalStorage para um login automático.
-- 
+
 ### Navegação Automática com LocalStorage
 
 A página verifica o LocalStorage para identificar se o usuário optou por 'lembrar o login'. Se as credenciais estiverem armazenadas e validadas, o usuário é automaticamente redirecionado para a página principal de personagens.
@@ -166,7 +166,7 @@ A página de filmes possui uma funcionalidade única de ordenação. Os usuário
 
 ## MainPage
 
-O `MainPage` é um componente versátil usado nas páginas de Personagens, Quadrinhos e Filmes. Este componente gerencia a exibição dos cards e a navegação entre eles.
+O `MainPage` é usado nas páginas de Personagens, Quadrinhos e Filmes. Este componente gerencia a exibição dos cards e a navegação entre eles.
 
 ### Funcionalidades
 
@@ -200,7 +200,7 @@ O `MainPage` é um componente versátil usado nas páginas de Personagens, Quadr
 
 ## Card
 
-O `Card` é um componente chave, usado para exibir informações sobre personagens, filmes e quadrinhos. Este componente é interativo, permitindo aos usuários expandir os cards para ver detalhes adicionais.
+O `Card` é usado para exibir informações sobre personagens, filmes e quadrinhos. Este componente é interativo, permitindo aos usuários expandir os cards para ver detalhes adicionais.
 
 ### Funcionalidades
 
@@ -260,7 +260,7 @@ O `Card` é um componente chave, usado para exibir informações sobre personage
 
 ## Header
 
-O `Header` é um componente essencial, servindo como o principal ponto de navegação para os usuários. Ele oferece links para as diferentes seções do site (Personagens, Filmes e HQs) e inclui um sistema de autenticação e menu responsivo.
+O `Header` serve como o principal ponto de navegação para os usuários. Ele oferece links para as diferentes seções do site (Personagens, Filmes e HQs) e inclui um sistema de autenticação e menu responsivo.
 
 ### Funcionalidades
 
@@ -317,7 +317,7 @@ Este componente é utilizado em todas as páginas da aplicação, fornecendo uma
 
 
 ## LoginForm
-O `LoginForm` é um componente essencial, responsável pela autenticação do usuário. Ele oferece a funcionalidade de login e cadastro, incluindo a opção de lembrar o usuário para futuras sessões.
+O `LoginForm` é responsável pela autenticação do usuário. Ele oferece a funcionalidade de login e cadastro, incluindo a opção de lembrar o usuário para futuras sessões.
 
 ### Funcionalidades
 
