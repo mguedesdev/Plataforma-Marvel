@@ -239,12 +239,6 @@ O `Card` é usado para exibir informações sobre personagens, filmes e quadrinh
 -   `transition`: Efeito de transição ao interagir com o botão.
 -   Responsividade: Ajuste do tamanho da fonte para telas menores.
 
-#### ModalContainer
-
--   `position`: Fixo para cobrir toda a tela quando os detalhes estão abertos.
--   `background`: Gradiente para efeito de sobreposição.
--   `animation`: Animação de fade in ou fade out.
-
 ### Interação e Funcionalidade
 
 -   `useState` para gerenciar a abertura e fechamento dos detalhes do card.
