@@ -322,7 +322,7 @@ Este componente é utilizado em todas as páginas da aplicação, fornecendo uma
 
 
 ## 🧩 LoginForm
-☑️💢🎈🎨🪄⚙️💾📚✒️🧩🎲
+
 O `LoginForm` é responsável pela autenticação do usuário. Ele oferece a funcionalidade de login e cadastro, incluindo a opção de lembrar o usuário para futuras sessões.
 
 ### 🪄 Funcionalidades
