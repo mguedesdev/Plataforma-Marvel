@@ -152,7 +152,14 @@ export const CheckBox = styled.div`
     width: 15px;
     height: 15px;
     cursor: pointer;
+    border: 1px solid #ff0000;
   }
+
+  input:checked {
+    accent-color: #FF0000;
+  }
+
+  
 
   label {
     font-size: 15px;

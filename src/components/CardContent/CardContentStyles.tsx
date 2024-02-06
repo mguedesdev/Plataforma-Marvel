@@ -7,7 +7,7 @@ interface AvailableProps {
 export const Content = styled.div`
   display: flex;
   flex-direction: column;
-
+  
   p {
     font-size: 14px;
     font-weight: 100;
@@ -21,7 +21,7 @@ export const Content = styled.div`
 
   @media (max-width: 600px) {
     p {
-      font-size: 16px;
+      font-size: 12px;
     }
   }
 

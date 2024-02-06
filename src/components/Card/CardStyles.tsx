@@ -49,6 +49,8 @@ export const CardContainer = styled.div.withConfig({
 
   @media (max-width: 600px) {
     width: 100%;
+
+
   }
   
 `;
@@ -99,14 +101,14 @@ export const CardContent = styled.div`
   }
 
   @media (max-width: 600px) {
-    padding: 10px 30px;
+    padding: 10px 20px;
     h1{
-      font-size: 25px;
+      font-size: 20px;
       padding: 10px 0;
     }
 
     p {
-      font-size: 14px;
+      font-size: 12px;
     }
   }
 `;
@@ -134,6 +136,8 @@ export const BtnDetails = styled.button`
 
   @media (max-width: 600px) {
     margin-top: 10px;
+    font-size: 20px;
+    
   }
 `;
 

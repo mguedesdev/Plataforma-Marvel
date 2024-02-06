@@ -49,12 +49,12 @@ export const moveLogo = keyframes`
   }
   70%, 73% {
     top: 50%;
-    left: 13.5%;
+    left: 14%;
     transform: translate(0, -50%);
   }
   100% {
     top: 25%;
-    left: 13.5%;
+    left: 14%;
     transform: translate(0, -50%);
   }
 `;

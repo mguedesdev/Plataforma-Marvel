@@ -9,7 +9,7 @@ export const CardsContainer = styled.div`
   gap: 2vw;
   z-index: 1;
   padding-top: 7%;
-  padding-left: 3%;
+  margin-left: 3%;
 
   @media (max-width: 1450px) {
     grid-template-columns: repeat(2, 30vw);

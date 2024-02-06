@@ -15,7 +15,7 @@ function LoginForm({handleRegister, register, animate} : LoginFormProps) {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [loginUsername, setLoginUsername] = useState('');
   const [loginPassword, setLoginPassword] = useState('');
-  const [rememberMe, setRememberMe] = useState(false);
+  const [rememberMe, setRememberMe] = useState(true);
   const [textAlert, setTextAlert] = useState('');
   const [showAlert, setShowAlert] = useState(false);
   const [success, setSuccess] = useState(false);

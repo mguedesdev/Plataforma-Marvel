@@ -15,13 +15,17 @@ export const CardDetailsContainer = styled.div`
   @media (max-width: 1025px) {
     z-index: 2;
   }
+
+  @media (max-width: 600px) {
+    overflow: auto;
+  }
 `;
 
 export const CardDetailsContent = styled.div.withConfig({
   shouldForwardProp: (prop) => prop !== 'isMovie',
   }) <CardDetailsProps>`
   display: flex;
-  justify-content: center;
+  justify-content: start;
   gap: ${({ isMovie }) => isMovie ? '30px' : '60px'};
   flex-direction: column;
   width: calc(55%);
@@ -91,9 +95,11 @@ export const CardDetailsContent = styled.div.withConfig({
   }
 
   @media (max-width: 600px) {
-
+    width: 100%;
+    padding: 0;
+    justify-content: start;
     h1 {
-      font-size: 26px;
+      font-size: 22px;
     }
 
     h2{
