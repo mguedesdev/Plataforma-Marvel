@@ -103,6 +103,8 @@ Cada componente é organizado em seu próprio subdiretório, contendo o arquivo 
 
 - `MainPage`: Componente central que organiza e exibe os cards, permitindo aos usuários interagir com o conteúdo principal.
 
+- `Overlay`: Componente de fundo para melhor visualização dos detalhes do card quando aberto.
+
 ## 📑Sobre a Página: LoginPage
 
 Esta página permite que os usuários façam login em suas contas existentes ou se registrem para criar uma nova conta.
