@@ -17,7 +17,7 @@ Para iniciar a Aplicação em sua máquina local, siga os passos abaixo:
 
 ### Clone o repositório
 
-    git clone git@github.com:mguedesdev/Plataforma-Marvel-Teste.git
+    git clone git@github.com:mguedesdev/Plataforma-Marvel.git
 
 ### Entre na pasta do projeto
 
