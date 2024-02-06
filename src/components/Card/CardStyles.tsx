@@ -68,7 +68,7 @@ export const CardContent = styled.div`
   justify-content: space-between;
   z-index: 1;
   height: 50%;
-  background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0.2));
+  background: linear-gradient(to bottom, red, rgba(255, 0, 0, 0.4));
   border-radius:  30px;
 
   h1{
@@ -77,7 +77,8 @@ export const CardContent = styled.div`
   }
 
   p {
-    font-size: 15px;
+    margin-top: 5px;
+    font-size: 14px;
     font-weight: 100;
     text-align: start;
     height: 70%;

@@ -18,15 +18,15 @@ function LoginForm({handleRegister, register, animate} : LoginFormProps) {
   const [rememberMe, setRememberMe] = useState(false);
   const [textAlert, setTextAlert] = useState('');
   const [showAlert, setShowAlert] = useState(false);
-  const [sucess, setSucess] = useState(false);
+  const [success, setSuccess] = useState(false);
 
 
   const navigate = useNavigate();
 
-  const activeAlert = (text: string, sucessAlert: boolean ) => {
+  const activeAlert = (text: string, successAlert: boolean ) => {
     setTextAlert(text);
     setShowAlert(true);
-    setSucess(sucessAlert);
+    setSuccess(successAlert);
     setTimeout(() => {
       setShowAlert(false);
     }, 3000);
@@ -78,7 +78,7 @@ function LoginForm({handleRegister, register, animate} : LoginFormProps) {
 
   return (
     <>
-    <AlertLogin alert={textAlert} showAlert={showAlert} sucess={sucess}/>
+    <AlertLogin alert={textAlert} showAlert={showAlert} sucess={success}/>
     {!register ? (
     <Form animate={animate} onSubmit={handleLogin}>
       <h1>Bem-vindo(a) de volta!</h1>

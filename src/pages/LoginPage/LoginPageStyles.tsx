@@ -28,7 +28,7 @@ export const MainContent = styled.div`
 
   h1 {
     margin-top: 180px;
-    font-size: 30 px;
+    font-size: 30px;
     font-weight: bold;
     color: #FF0000;
   }
