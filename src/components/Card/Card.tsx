@@ -1,4 +1,4 @@
-import { CardContainer, CardContent, ModalContainer, BtnDetails, CardImage } from "./CardStyles"
+import { CardContainer, CardContent, BtnDetails, CardImage } from "./CardStyles"
 import { useState } from "react";
 import CardDetails from "../CardDetails/CardDetails";
 import { CardItem } from "../../types/cardItem";
@@ -6,18 +6,20 @@ import { CardItem } from "../../types/cardItem";
 interface CardItemProps {
   item: CardItem;
   animate: boolean;
+  setIsDetailsOpen: (value: boolean) => void;
   setSelectedCard: (id: number) => void;
   selectedCardId: number;
   index: number;
 }
 
-function Card({ item, animate, setSelectedCard, selectedCardId, index }: CardItemProps) {
+function Card({ item, animate, setSelectedCard, selectedCardId, index, setIsDetailsOpen }: CardItemProps) {
 
   const [detailsOpen, setDetailsOpen] = useState(false);
 
   const handleDetails = () => {
     setDetailsOpen(!detailsOpen);
     setSelectedCard(item?.id ? item.id : 0);
+    setIsDetailsOpen(!detailsOpen);
   }
 
   const isCardSelected = selectedCardId === item.id;
@@ -31,7 +33,7 @@ function Card({ item, animate, setSelectedCard, selectedCardId, index }: CardIte
         index={index}
       >
 
-        <CardImage src={item.image} alt={item.title} />
+        <CardImage src={item.image} alt={item.title} detailsOpen={detailsOpen} />
           
         <CardDetails
           item={item}
@@ -48,9 +50,6 @@ function Card({ item, animate, setSelectedCard, selectedCardId, index }: CardIte
         
       </CardContainer>
       
-      {detailsOpen &&
-        <ModalContainer detailsOpen={detailsOpen}
-      />}
     </>
   )
 }

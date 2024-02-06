@@ -24,7 +24,7 @@ export const CardDetailsContent = styled.div.withConfig({
   justify-content: center;
   gap: ${({ isMovie }) => isMovie ? '30px' : '60px'};
   flex-direction: column;
-  width: calc(100% - 350px);
+  width: calc(55%);
   height: 100%;
   padding: 40px;
   position: absolute;
@@ -62,50 +62,42 @@ export const CardDetailsContent = styled.div.withConfig({
 
   @media (max-width: 1025px) {
     width: 100%;
-    padding: 60px;
-    gap: 40px;
+    padding: 20px 30px;
+    gap: 00px;
     justify-content: space-evenly;
 
     h1 {
-      font-size: 42px;
+      font-size: 28px;
     }
 
     h2{
-      font-size: 36px;
+      font-size: 20px;
     }
 
     h3{
-      font-size: 30px;
+      font-size: 20px;
     }
 
     li{ 
-      font-size: 24px;
+      font-size: 16px;
     }
 
     img {
-      width: 40px;
-      height: 40px;
+      width: 25px;
+      height: 25px;
       margin-top: 5px;
       margin-right: 5px;
     }
   }
 
   @media (max-width: 600px) {
-    width: 100%;
-    padding: 20px;
-    gap: 20px;
-    justify-content: space-evenly;
 
     h1 {
-      font-size: 22px;
+      font-size: 26px;
     }
 
     h2{
-      font-size: 16px;
-    }
-
-    h3{
-      font-size: 20px;
+      font-size: 18px;
     }
 
     li{ 
@@ -121,7 +113,6 @@ export const CardDetailsContent = styled.div.withConfig({
   }
 `;
 
-
 export const BtnClose = styled.img`
   z-index: 10;
   position: absolute;
@@ -130,13 +121,6 @@ export const BtnClose = styled.img`
   right: 25px;
   width: 30px;
   height: 30px;
-
-  @media (max-width: 1025px) {
-    width: 40px;
-    height: 40px;
-    bottom: 20px;
-    right: 20px;
-  }
 
   @media (max-width: 600px) {
     width: 25px;

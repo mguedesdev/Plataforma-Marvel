@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { fadeIn, fadeOut } from "../../styles/animations";
+import { fadeIn } from "../../styles/animations";
 
 interface CardContainerProps {
   animate: boolean;
@@ -20,9 +20,10 @@ export const CardContainer = styled.div.withConfig({
   justify-content: center;
   align-items: end;
   height: 100%;
-  width: 350px;
+  width: 90%;
   border-radius: 30px;
   overflow: hidden;
+  z-index: 1;
 
   ${({ animate }) => css`
     animation: 
@@ -34,28 +35,20 @@ export const CardContainer = styled.div.withConfig({
     display: flex;
 
     z-index: 10;
-    width: 750px;
+    width: 200%;
     justify-content: ${index !== 0 ? 'flex-end' : 'flex-start'};
-    transform: ${index !== 0 ? 'translateX(calc(-100% + 350px))' : '0'};
+    transform: ${index !== 0 ? 'translateX(calc(-55%))' : '0'};
   `}
 
   @media (max-width: 1025px) {
-    width: 70%;
-    margin: 0 auto;
-    height: 100%;
-    
+    width: 100%;
     ${({ isCardSelected, detailsOpen }) => isCardSelected && detailsOpen && css`
-    position: absolute;
-    display: flex;
-
-    z-index: 10;
-    justify-content: center;
-    transform: 0;
+    transform: none;
   `}
   }
 
   @media (max-width: 600px) {
-    width: 80%;
+    width: 100%;
   }
   
 `;
@@ -96,18 +89,13 @@ export const CardContent = styled.div`
   }
 
   @media (max-width: 1025px) {
-    padding: 25px 60px;
-    width: 100%;
-    h1{
-      font-size: 40px;
-      line-height: 0.8;
-      padding: 15px 0;
+    padding: 20px 25px;
+    
+    h1 {
+      line-height: 1;
+    
     }
 
-    p {
-      font-size: 24px;
-      padding-right: 5px;
-    }
   }
 
   @media (max-width: 600px) {
@@ -144,49 +132,18 @@ export const BtnDetails = styled.button`
     transform: scale(0.9);
   }
 
-  @media (max-width: 1025px) {
-    font-size: 42px;
-    margin-top: 10px;
-  }
-
   @media (max-width: 600px) {
-    font-size: 20px;
     margin-top: 10px;
   }
 `;
 
-export const ModalContainer = styled.div.withConfig({
+export const CardImage = styled.img.withConfig({
   shouldForwardProp: (prop) => prop !== 'detailsOpen',
   })<DetailsOpenProps>`
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
   height: 100%;
-  background: linear-gradient(to right, rgba(0, 0, 0, 1) 50%, transparent);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-  animation: ${({ detailsOpen }) => detailsOpen ? fadeIn : fadeOut} 0.5s ease-in-out both;
-
-  @media (max-width: 1025px) {
-    display:none;
-  }
-`;
-
-export const CardImage = styled.img`
-  height: 100%;
-  width: 350px;
+  width: ${({ detailsOpen }) => detailsOpen ? '45%' : '100%'};
   object-fit: cover;
   position: absolute;
   z-index: 1;
   border-radius: 30px;
-
-  @media (max-width: 1025px) {
-    width: 100%;
-    height: 100%;
-  }
 `;
-

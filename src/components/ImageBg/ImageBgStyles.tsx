@@ -50,6 +50,7 @@ export const ImageContainer = styled.div.withConfig({
   `}
 
   @media (max-width: 1025px) {
+    width: 100%;
     height: 100%;
     opacity: 0.2;
     position: fixed;

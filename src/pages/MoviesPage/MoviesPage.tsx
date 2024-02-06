@@ -51,7 +51,7 @@ function MoviesPage() {
         data={displayedMovies}
         setStart={setStart}
       />
-
+      
     </MainContainer>
   )
 }

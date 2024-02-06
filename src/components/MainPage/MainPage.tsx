@@ -2,6 +2,7 @@ import { CardsContainer, CardContainer } from "./MainPageStyles";
 import { useState } from "react";
 import Card from "../Card/Card";
 import { CardItem } from "../../types/cardItem";
+import Overlay from "../Overlay/Overlay";
 
 interface cardItem {
   data: CardItem[];
@@ -10,6 +11,7 @@ interface cardItem {
 
 function MainPage( { data, start } : cardItem) {
   const [selectedCardId, setSelectedCardId] = useState(0);
+  const [isDetailsOpen, setIsDetailsOpen] = useState(false);
 
   const handleSelectCard = (id: number) => {
     setSelectedCardId(id);
@@ -28,6 +30,7 @@ function MainPage( { data, start } : cardItem) {
   const displayedItems = getDisplayedItems(data);
   
   return (
+    <>
     <CardsContainer>
       {displayedItems.map((item, index) => {
         return (
@@ -39,11 +42,15 @@ function MainPage( { data, start } : cardItem) {
               index={index}
               selectedCardId={selectedCardId}
               setSelectedCard={handleSelectCard}
+              setIsDetailsOpen={setIsDetailsOpen}
             />
           </CardContainer>
         );
       })}
+      <Overlay detailsOpen={isDetailsOpen} />
     </CardsContainer>
+    
+    </>
   )
 }
 
