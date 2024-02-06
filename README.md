@@ -21,7 +21,7 @@ Para iniciar a Aplicação em sua máquina local, siga os passos abaixo:
 
 ### Entre na pasta do projeto
 
-    cd Plataforma-Marvel-Teste
+    cd Plataforma-Marvel
 
 ### Instale as dependências
 
